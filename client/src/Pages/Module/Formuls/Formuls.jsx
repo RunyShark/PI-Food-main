@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./formuls.css";
 const Formulario = () => {
@@ -88,6 +89,7 @@ const Formulario = () => {
                   <label>
                     Pasos
                     <textarea
+                      className="form-texta"
                       name="Pasos"
                       id="5"
                       placeholder="Pasos"
@@ -102,6 +104,7 @@ const Formulario = () => {
                   <label>
                     Descripcion
                     <textarea
+                      className="form-texta"
                       name="Descripcion"
                       id="6"
                       placeholder="Descripcion"
@@ -125,7 +128,16 @@ const Formulario = () => {
                   </label>
                 </label>
               </label>
-              <button>Agregar</button>
+              <button
+                type="submit"
+                value="Send"
+                onClick={() => window.location.reload(alert("Receta nueva"))}
+              >
+                Agregar
+              </button>
+              <button>
+                <Link to={"/home"}>Regresar</Link>
+              </button>
               <span></span>
             </form>
           </div>
