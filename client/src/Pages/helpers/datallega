@@ -1,0 +1,18 @@
+// router.get("/recipes" data.results.map
+// array = [
+//   {
+//     id: el.id,
+//     name: el.title,
+//     detalis: el.summary,
+//     score: el.spoonacularScore,
+//     lvl: el.healthScore,
+//     step: e.analyzedInstructions[0]?.steps.map((e) => `${e.number} ${e.step}`),
+//     img: el.image,
+//    Types: e.diets.map((d) => {return { name: d };  }),
+//
+//
+//
+//
+//     }),
+//   },
+// ];

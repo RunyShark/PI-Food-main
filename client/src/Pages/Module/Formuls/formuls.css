@@ -1,0 +1,85 @@
+.form-dad {
+  display: flex;
+  justify-content: space-between;
+  margin: -10px;
+}
+.form-conteiner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("https://live.staticflickr.com/3436/3306159835_f5496d9a0c_h.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.app_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app_3 {
+  width: 55%;
+  background-color: #000000;
+}
+
+.form-conteiner form {
+  width: 30%;
+  margin: auto;
+  background-color: #fafafa;
+  padding: 0px 60px;
+  border-radius: 10px;
+}
+
+.form-conteiner h1 {
+  color: #000000;
+  text-align: center;
+}
+
+.form-conteiner button {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background-color: #173969;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.form-conteiner input {
+  padding: 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.form-conteiner label {
+  font-size: 12px;
+  color: gray;
+}
+
+.form-conteiner span {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+
+.form-conteiner input:invalid[focused="true"] {
+  border: 1px solid red;
+}
+
+.form-conteiner input:invalid[focused="true"] ~ span {
+  display: block;
+}

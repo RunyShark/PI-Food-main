@@ -120,7 +120,7 @@ router.get("/:id", async (req, res, next) => {
         score: esta.spoonacularScore,
         lvl: esta.healthScore,
         step: esta.analyzedInstructions[0]?.steps.map(
-          (e) => `[${e.number}] ${e.step}`
+          (e) => `<ol> <il>${e.number}</il> ${e.step} </ol>`
         ),
         img: esta.image,
         Types: esta.diets.map((d) => {
