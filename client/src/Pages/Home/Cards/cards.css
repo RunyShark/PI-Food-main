@@ -1,0 +1,20 @@
+.card-conteiner-btn button {
+  font-size: 20px;
+  background-color: #e9c46a;
+  border: 5px solid rgba(199, 216, 249, 0.1);
+  border-radius: 10px;
+  transition: 0.8s;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.card-conteiner-btn button:hover {
+  background: #e76f51;
+}
+
+.card-conteiner-btn a {
+  text-transform: uppercase;
+  color: #003049;
+  text-decoration: none;
+}

@@ -1,11 +1,4 @@
-import {
-  GET_ALL,
-  GET_NAME,
-  GET_ID,
-  GET_TYPE,
-  POST_DATA,
-  SORT_DATA,
-} from "../accions";
+import { GET_ALL, GET_NAME, GET_ID, GET_TYPE, POST_DATA } from "../accions";
 
 const initilState = {
   allDataRecipe: [],
@@ -40,8 +33,7 @@ const rootReducer = (state = initilState, actions) => {
       return {
         ...state,
       };
-    case SORT_DATA:
-     
+
     default:
       return state;
   }

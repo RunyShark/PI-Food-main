@@ -1,0 +1,50 @@
+.titel-home {
+  text-align: center;
+  font-size: 35px;
+}
+
+.conteiner-home {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 100px;
+  grid-row-gap: 50px;
+  width: 200px;
+  padding: 200px;
+}
+
+.conteiner-data {
+  box-shadow: 0px 0px 14px -5px;
+  transition: 0.6s;
+  animation: ease-in-out;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.conteiner-data:hover {
+  transform: scale(1.065);
+  box-shadow: 0px 0px 14px 0px rgb(46, 58, 68);
+  background: rgb(34, 193, 195);
+  background: rgb(143, 179, 230);
+  background: linear-gradient(
+    0deg,
+    rgb(228, 239, 255) 0%,
+    rgba(252, 252, 252, 1) 19%
+  );
+}
+
+.conteiner-data h2 {
+  font-size: 50px;
+}
+
+.conteiner-data li {
+  font-size: 20px;
+}
+
+.conteiner-data img {
+  width: 500px;
+}
+
+.card-conteiner-btn {
+  display: flex;
+  justify-content: center;
+}
