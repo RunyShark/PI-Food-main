@@ -1,4 +1,4 @@
-const { Router, response } = require("express");
+const { Router } = require("express");
 const { Recipe } = require("../db.js");
 
 const router = Router();
@@ -13,9 +13,11 @@ router.post("/", async (req, res, next) => {
       step,
       img,
     });
-    console.log(newRecipe.id);
-
-    await newRecipe.addType(Types);
+    console.log(newRecipe.toJSON());
+    await Types.map((e) => {
+      newRecipe.addType(e);
+    });
+    //[1,2,3,4,]
 
     res.status(202).send("Nueva receta");
   } catch (error) {
