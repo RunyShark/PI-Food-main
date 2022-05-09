@@ -19,25 +19,30 @@ const Detail = () => {
         <div className="details-titel">
           <h1>Soy un details</h1>
         </div>
-
-        <div className="details-steps">
-          <p dangerouslySetInnerHTML={{ __html: idDataRecipe.step }}></p>
-        </div>
-
         <div className="details-name">
           <p dangerouslySetInnerHTML={{ __html: idDataRecipe.name }}></p>
         </div>
-
-        <div className="details-data">
-          <h3 dangerouslySetInnerHTML={{ __html: idDataRecipe.detalis }}></h3>
+        <div className="details-img">
+          <img src={idDataRecipe.img} alt={idDataRecipe.id} />
         </div>
-
         <div className="details-score">
           <h4 dangerouslySetInnerHTML={{ __html: idDataRecipe.score }}></h4>
         </div>
-
         <div className="details-lvl">
           <h5 dangerouslySetInnerHTML={{ __html: idDataRecipe.lvl }}></h5>
+        </div>
+        <div className="details-steps">
+          <p dangerouslySetInnerHTML={{ __html: idDataRecipe.step }}></p>
+        </div>
+        <div className="details-data">
+          <h3 dangerouslySetInnerHTML={{ __html: idDataRecipe.detalis }}></h3>
+        </div>
+        <div className="details-data">
+          <div>
+            {idDataRecipe.Types?.map((e, i) => (
+              <p key={i}>{e.name}</p>
+            ))}
+          </div>
         </div>
       </div>
 

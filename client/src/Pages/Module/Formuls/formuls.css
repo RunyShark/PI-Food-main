@@ -78,7 +78,10 @@
   color: red;
   text-align: center;
 }
-
+.yono {
+  font-size: 15px;
+  color: #000000;
+}
 .form-conteiner input:invalid[focused="true"] {
   border: 1px solid red;
 }

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getType } from "../../../store/accions";
+import { getType, postRecipe } from "../../../store/accions";
 import "./formuls.css";
 
 const validation = (values) => {
@@ -46,18 +47,20 @@ const validation = (values) => {
 const Formulario = () => {
   //const [loadig, setLoadig] = useState({}); ---- si me da tiempo hacemos un envio de correo de la reseta al usuario
   const [errors, setErrors] = useState({});
+
   const [values, setValues] = useState({
     Nomber: "",
     Descripcion: "",
     Score: 0,
     lvl: 0,
     imagen: "",
-    steps: [],
+    steps: "",
     types: [],
   });
 
   const dispact = useDispatch();
-  const { DietType } = useSelector((state) => state);
+  const { types } = useSelector((state) => state);
+  console.log(types);
 
   useEffect(() => {
     dispact(getType());
@@ -73,8 +76,18 @@ const Formulario = () => {
     setErrors(validation(values));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const resp = await axios.post(`http://localhost:3001/recipe`, values).data;
+    console.log(resp.data);
+  };
+
+  const handleTypeDiets = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
@@ -185,17 +198,55 @@ const Formulario = () => {
                     />
                     {errors.Descripcion && <p>{errors.Descripcion}</p>}
                   </label>
-                  <div>
-                    <select defaultValue="default">
+                  <div className="yono">
+                    {/* <h4>Elije el tipo de dieta</h4>
+                    <ul>
+                      {DietType?.map((e) => (
+                        <li key={e.id}>
+                          <spawn className="yono" onChange={handleTypeDiets}>
+                            {e.name}
+                            <input
+                              value={e.name}
+                              type="radio"
+                              name="types"
+                              id={e.id}
+                            />
+                          </spawn>
+                        </li>
+                      ))}
+                    </ul> */}
+                    {/* {types.map((el, i) => { ------> problalbe solucion
+                    return (
+                      <label key={i}>
+                        <input
+                          type="checkbox"
+                          name="types"
+                          value={i + 1}
+                          onChange={handleTypeDiets}
+                        />
+                        {el.name}
+                      </label>
+                    );
+                  })} */}
+                    <select
+                      defaultValue="default"
+                      onChange={(e) => handleTypeDiets(e)}
+                    >
                       <option value="default" disabled>
                         Tipe dieta
                       </option>
-                      {DietType.map((e) => (
-                        <option key={e.id} value={e.name}>
-                          {e.name}
-                        </option>
-                      ))}
+                      {types &&
+                        types.map((e) => (
+                          <option key={e.id} value={e.name}>
+                            {e.name}
+                          </option>
+                        ))}
                     </select>
+                    {/* {values.types.map((e) => (
+                      <ul>
+                        <li>{e.name}</li>
+                      </ul>
+                    ))} */}
                   </div>
                   {/* <label>
                     types
@@ -215,9 +266,9 @@ const Formulario = () => {
               <button
                 type="submit"
                 value="Send"
-                onClick={() =>
-                  window.location.reload(alert("solicitud enviado"))
-                }
+                // onClick={() =>
+                //   window.location.reload(alert("solicitud enviado"))
+                // }
               >
                 Agregar
               </button>

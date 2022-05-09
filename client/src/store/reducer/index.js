@@ -4,7 +4,7 @@ const initilState = {
   allDataRecipe: [],
   filtertData: [],
   idDataRecipe: [],
-  DietType: [],
+  types: [],
 };
 
 const rootReducer = (state = initilState, actions) => {
@@ -27,7 +27,7 @@ const rootReducer = (state = initilState, actions) => {
     case GET_TYPE:
       return {
         ...state,
-        DietType: actions.payload,
+        types: actions.payload,
       };
     case POST_DATA:
       return {

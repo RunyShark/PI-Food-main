@@ -65,24 +65,10 @@ export const getType = () => {
 };
 //-------------------------------------------------------//
 //local
-export const getPost = ({ name, details, score, img, steps }) => {
-  return async (dispatch) => {
-    try {
-      const resp = await axios({
-        method: "GET",
-        url: `http://localhost:3001/type`,
-        data: {
-          name,
-          details,
-          score,
-          img,
-          steps,
-        },
-      });
-      return resp;
-    } catch (error) {
-      console.log(error);
-    }
+export const postRecipe = (data) => {
+  return async () => {
+    const resp = await axios.post(`http://localhost:3001/recipe`, data);
+    return resp;
   };
 };
 
