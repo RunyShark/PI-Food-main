@@ -52,7 +52,7 @@ const Formulario = () => {
     Score: 0,
     lvl: 0,
     imagen: "",
-    steps: "",
+    steps: [],
     types: [],
   });
 

@@ -1,8 +1,13 @@
 .titel-home {
   text-align: center;
-  font-size: 35px;
+  font-size: 15px;
 }
 
+.titel-home input {
+  height: 50px;
+  width: 500px;
+  border-radius: 10px;
+}
 .conteiner-home {
   display: grid;
   grid-template-columns: auto auto auto;

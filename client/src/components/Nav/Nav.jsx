@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import { Link } from "react-router-dom";
+
 import "./nav.css";
 
 const Nav = () => {
