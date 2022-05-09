@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getType, postRecipe } from "../../../store/accions";
@@ -47,7 +46,7 @@ const validation = (values) => {
 const Formulario = () => {
   //const [loadig, setLoadig] = useState({}); ---- si me da tiempo hacemos un envio de correo de la reseta al usuario
   const [errors, setErrors] = useState({});
-
+  const [arr, setArr] = useState([]);
   const [values, setValues] = useState({
     Nomber: "",
     Descripcion: "",
@@ -55,12 +54,11 @@ const Formulario = () => {
     lvl: 0,
     imagen: "",
     steps: "",
-    types: [],
+    Types: "",
   });
 
   const dispact = useDispatch();
   const { types } = useSelector((state) => state);
-  console.log(types);
 
   useEffect(() => {
     dispact(getType());
@@ -78,127 +76,121 @@ const Formulario = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const resp = await axios.post(`http://localhost:3001/recipe`, values).data;
-    console.log(resp.data);
   };
 
   const handleTypeDiets = (e) => {
-    setValues({
-      ...values,
-      [e.target.name]: e.target.value,
-    });
+    setArr([...arr, e.target.value]);
   };
 
   return (
     <>
-      <div className="form-dad">
-        <div className="form-conteiner">
-          <div>
-            <form onSubmit={handleSubmit}>
-              <div>
-                <h1>Creata tu nueva receta aca</h1>
-              </div>
-              <label>
-                Nomber
-                <input
-                  className="formInput"
-                  id="1"
-                  type="text"
-                  name="Nomber"
-                  placeholder={`Escribe el nombre de la receta`}
-                  value={values.Nomber}
-                  onChange={handleOnchange}
-                  onBlur={handleBlur}
-                  errorMessage="¡La receta debe de tener entre 3 y 30 caracteres, solo se acepta texto!"
-                  required
-                />
-                {errors.Nomber && <p>{errors.Nomber}</p>}
-              </label>
-              <label>
-                Score
-                <input
-                  className="formInput"
-                  id="2"
-                  name="Score"
-                  type="number"
-                  placeholder="elgie una puntuacion"
-                  value={values.Score}
-                  errorMessage="¡El score  debe de ser un numero entre 1 y 99 Solo se aceptan numeros!"
-                  label="Score"
-                  required={true}
-                  onChange={handleOnchange}
-                  onBlur={handleBlur}
-                />
-                {errors.Score && <p>{errors.Score}</p>}
-              </label>
-              <label>
-                lvl
-                <input
-                  className="formInput"
-                  id="3"
-                  name="lvl"
-                  type="number"
-                  placeholder="elije un nivel"
-                  value={values.lvl}
-                  errorMessage="¡El lvl  debe de ser un numero entre 1 y 99 Solo se aceptan numeros!"
-                  label="lvl"
-                  required={true}
-                  onChange={handleOnchange}
-                  onBlur={handleBlur}
-                />
-                {errors.lvl && <p>{errors.lvl}</p>}
+      <div>
+        <div className="form-dad">
+          <div className="form-conteiner">
+            <div>
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <h1>Creata tu nueva receta aca</h1>
+                </div>
                 <label>
-                  imagen
+                  Nomber
                   <input
                     className="formInput"
-                    id="4"
-                    name="imagen"
+                    id="1"
                     type="text"
-                    placeholder="Coloca una imagen"
-                    value={values.imagen}
-                    errorMessage="¡Debe de ser una url de una imgane valida!"
-                    label="imagen"
+                    name="Nomber"
+                    placeholder={`Escribe el nombre de la receta`}
+                    value={values.Nomber}
+                    onChange={handleOnchange}
+                    onBlur={handleBlur}
+                    errorMessage="¡La receta debe de tener entre 3 y 30 caracteres, solo se acepta texto!"
+                    required
+                  />
+                  {errors.Nomber && <p>{errors.Nomber}</p>}
+                </label>
+                <label>
+                  Score
+                  <input
+                    className="formInput"
+                    id="2"
+                    name="Score"
+                    type="number"
+                    placeholder="elgie una puntuacion"
+                    value={values.Score}
+                    errorMessage="¡El score  debe de ser un numero entre 1 y 99 Solo se aceptan numeros!"
+                    label="Score"
                     required={true}
                     onChange={handleOnchange}
                     onBlur={handleBlur}
                   />
-                  {errors.imagen && <p>{errors.imagen}</p>}
+                  {errors.Score && <p>{errors.Score}</p>}
+                </label>
+                <label>
+                  lvl
+                  <input
+                    className="formInput"
+                    id="3"
+                    name="lvl"
+                    type="number"
+                    placeholder="elije un nivel"
+                    value={values.lvl}
+                    errorMessage="¡El lvl  debe de ser un numero entre 1 y 99 Solo se aceptan numeros!"
+                    label="lvl"
+                    required={true}
+                    onChange={handleOnchange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.lvl && <p>{errors.lvl}</p>}
                   <label>
-                    Pasos
-                    <textarea
-                      className="form-texta"
-                      name="steps"
-                      id="5"
-                      placeholder="Coloca los pasos de la recesta"
-                      value={values.steps}
-                      cols="50"
-                      rows="5"
-                      errorMessage="¡La descripcion  debe tener entre 3 y 300 caracteres, solo se acepta texto!"
+                    imagen
+                    <input
+                      className="formInput"
+                      id="4"
+                      name="imagen"
+                      type="text"
+                      placeholder="Coloca una imagen"
+                      value={values.imagen}
+                      errorMessage="¡Debe de ser una url de una imgane valida!"
+                      label="imagen"
                       required={true}
                       onChange={handleOnchange}
                       onBlur={handleBlur}
                     />
-                  </label>
-                  {errors.steps && <p>{errors.steps}</p>}
-                  <label>
-                    Descripcion
-                    <textarea
-                      className="form-texta"
-                      name="Descripcion"
-                      id="6"
-                      placeholder="Escribe una descripcion corespondiente"
-                      value={values.Descripcion}
-                      errorMessage="¡La descripcion  debe tener entre 3 y 300 caracteres, solo se acepta texto!"
-                      cols="50"
-                      rows="5"
-                      required={true}
-                      onChange={handleOnchange}
-                      onBlur={handleBlur}
-                    />
-                    {errors.Descripcion && <p>{errors.Descripcion}</p>}
-                  </label>
-                  <div className="yono">
+                    {errors.imagen && <p>{errors.imagen}</p>}
+                    <label>
+                      Pasos
+                      <textarea
+                        className="form-texta"
+                        name="steps"
+                        id="5"
+                        placeholder="Coloca los pasos de la recesta"
+                        value={values.steps}
+                        cols="50"
+                        rows="5"
+                        errorMessage="¡La descripcion  debe tener entre 3 y 300 caracteres, solo se acepta texto!"
+                        required={true}
+                        onChange={handleOnchange}
+                        onBlur={handleBlur}
+                      />
+                    </label>
+                    {errors.steps && <p>{errors.steps}</p>}
+                    <label>
+                      Descripcion
+                      <textarea
+                        className="form-texta"
+                        name="Descripcion"
+                        id="6"
+                        placeholder="Escribe una descripcion corespondiente"
+                        value={values.Descripcion}
+                        errorMessage="¡La descripcion  debe tener entre 3 y 300 caracteres, solo se acepta texto!"
+                        cols="50"
+                        rows="5"
+                        required={true}
+                        onChange={handleOnchange}
+                        onBlur={handleBlur}
+                      />
+                      {errors.Descripcion && <p>{errors.Descripcion}</p>}
+                    </label>
                     {/* <h4>Elije el tipo de dieta</h4>
                     <ul>
                       {DietType?.map((e) => (
@@ -228,27 +220,28 @@ const Formulario = () => {
                       </label>
                     );
                   })} */}
-                    <select
-                      defaultValue="default"
-                      onChange={(e) => handleTypeDiets(e)}
-                    >
-                      <option value="default" disabled>
-                        Tipe dieta
-                      </option>
-                      {types &&
-                        types.map((e) => (
-                          <option key={e.id} value={e.name}>
-                            {e.name}
-                          </option>
-                        ))}
-                    </select>
-                    {/* {values.types.map((e) => (
+                    <div>
+                      <select
+                        defaultValue="default"
+                        onChange={(e) => handleTypeDiets(e)}
+                      >
+                        <option value="default" disabled>
+                          Tipe dieta
+                        </option>
+                        {types &&
+                          types.map((e) => (
+                            <option key={e.id} value={e.id} name={e.id}>
+                              {e.name}
+                            </option>
+                          ))}
+                      </select>
+                      {/* {values.types.map((e) => (
                       <ul>
                         <li>{e.name}</li>
                       </ul>
                     ))} */}
-                  </div>
-                  {/* <label>
+                    </div>
+                    {/* <label>
                     types
                     <input
                       className="formInput"
@@ -260,22 +253,23 @@ const Formulario = () => {
                       onBlur={handleBlur}
                     />
                   </label> */}
+                  </label>
                 </label>
-              </label>
 
-              <button
-                type="submit"
-                value="Send"
-                // onClick={() =>
-                //   window.location.reload(alert("solicitud enviado"))
-                // }
-              >
-                Agregar
-              </button>
-              <Link to={"/home"}>
-                <button>volver</button>
-              </Link>
-            </form>
+                <button
+                  type="submit"
+                  value="Send"
+                  // onClick={() =>
+                  //   window.location.reload(alert("solicitud enviado"))
+                  // }
+                >
+                  Agregar
+                </button>
+                <Link to={"/home"}>
+                  <button>volver</button>
+                </Link>
+              </form>
+            </div>
           </div>
         </div>
       </div>
