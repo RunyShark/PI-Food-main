@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-
-const CardsName = ({ id, name, Types, img, score, lvl }) => {
+const CardsName = ({ id, name, Types, img, score, lvl, detalis, step }) => {
   return (
     <>
       <div>
@@ -12,10 +10,10 @@ const CardsName = ({ id, name, Types, img, score, lvl }) => {
             <li key={e.name}>{e.name}</li>
           ))}
         </ul>
+
+        <div>{<h3 dangerouslySetInnerHTML={{ __html: detalis }}></h3>}</div>
         <div>
-          <button>
-            <Link to={`/recipes/data/${id}`}>Detalles</Link>
-          </button>
+          <p dangerouslySetInnerHTML={{ __html: step }}></p>
         </div>
         <img src={img} alt={img} />
       </div>

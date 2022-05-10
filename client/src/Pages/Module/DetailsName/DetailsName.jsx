@@ -24,6 +24,8 @@ const DetaisName = () => {
               lvl={e.lvl}
               img={e.img}
               Types={e.Types}
+              detalis={e.detalis}
+              step={e.step}
               id={e.id}
             />
           </div>
