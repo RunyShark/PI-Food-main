@@ -12,7 +12,7 @@ const Cards = ({ id, name, Types, img }) => {
         </ul>
         <div className="card-conteiner-btn">
           <button>
-            <Link to={`/recipes/${id}`}>Detalles</Link>
+            <Link to={`/recipes/data/${id}`}>Detalles</Link>
           </button>
         </div>
         <img src={img} alt={img} />

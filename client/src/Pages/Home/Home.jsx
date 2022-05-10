@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Pagineichon from "../Module/Pagineichon/Pagineichon";
 import Cards from "../Module/Cards/Cards";
-import { getAll, getName } from "../../store/accions";
+
+import { getName } from "../../store/accions";
 import "./home.css";
 
 const Home = () => {
@@ -17,29 +18,24 @@ const Home = () => {
 
   const dispacht = useDispatch();
 
-  const { allDataRecipe } = useSelector((states) => states);
+  const { allDataRecipe, allDataName } = useSelector((states) => states);
+  console.log(allDataName);
 
   const limitationCards = allDataRecipe.length / porPagina;
   console.log(limitationCards);
 
-  useEffect(() => {
-    dispacht(getAll());
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const handleChangue = (e) => {
     e.preventDefault();
     setSerch(e.target.value);
+    setPagina(1);
   };
   const handleClick = () => {
     dispacht(getName(serch));
   };
 
-  //Solucionar llamdas de apis a locadas
-  //busqueda por nombre te manda a los detalles de la receta
+  //busqueda por nombre te manda a los detalles de la receta  ---
   //testear
-  const name = serch;
+
   return (
     <>
       <div className="titel-home">
@@ -51,7 +47,7 @@ const Home = () => {
           value={serch}
         />
         <button onClick={handleClick}>
-          <Link to={`/recipes/${name}`}>Buscar</Link>
+          <Link to={`/recipes/data`}>Buscar</Link>
         </button>
       </div>
       <div className="dad">
@@ -82,6 +78,7 @@ const Home = () => {
                 </div>
               );
             })}
+
           <Pagineichon
             pagina={pagina}
             setPagina={setPagina}
