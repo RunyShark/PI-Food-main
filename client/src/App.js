@@ -19,6 +19,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/create" element={<Formuls />} />
           <Route path="/recipes/:id" element={<Detail />} />
+          <Route path="/recipe?name:" element={<Detail />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

@@ -76,9 +76,11 @@ const Formulario = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     dispact(postRecipe({ ...values, Types: diets }));
-    setDiets("");
-    setValues("");
+
+    setDiets(" ");
+    setValues(" ");
   };
 
   const handleTypeDiets = (e) => {
@@ -262,9 +264,9 @@ const Formulario = () => {
               <button
                 type="submit"
                 value="Send"
-                // onClick={() =>
-                //   window.location.reload(alert("solicitud enviado"))
-                // }
+                onClick={() =>
+                  window.location.reload(alert("solicitud enviado"))
+                }
               >
                 Agregar
               </button>

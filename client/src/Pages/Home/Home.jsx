@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from "react";
-import Cards from "./Cards/Cards";
 import { useDispatch, useSelector } from "react-redux";
-import { getAll } from "../../store/accions";
+import { Link } from "react-router-dom";
+import Pagineichon from "../Module/Pagineichon/Pagineichon";
+import Cards from "../Module/Cards/Cards";
+import { getAll, getName } from "../../store/accions";
 import "./home.css";
 
 const Home = () => {
-  const [serch, setSerch] = useState("");
-  const dispacht = useDispatch();
+  const [pagina, setPagina] = useState(1);
+  console.log(pagina);
+  const [anterior, setAnterior] = useState(0);
+  console.log(anterior);
   // eslint-disable-next-line no-unused-vars
+  const [porPagina, setPorPagina] = useState(5);
+  const [serch, setSerch] = useState("");
+
+  const dispacht = useDispatch();
+
   const { allDataRecipe } = useSelector((states) => states);
+
+  const limitationCards = allDataRecipe.length / porPagina;
+  console.log(limitationCards);
 
   useEffect(() => {
     dispacht(getAll());
@@ -20,7 +32,14 @@ const Home = () => {
     e.preventDefault();
     setSerch(e.target.value);
   };
+  const handleClick = () => {
+    dispacht(getName(serch));
+  };
 
+  //Solucionar llamdas de apis a locadas
+  //busqueda por nombre te manda a los detalles de la receta
+  //testear
+  const name = serch;
   return (
     <>
       <div className="titel-home">
@@ -31,6 +50,9 @@ const Home = () => {
           onChange={handleChangue}
           value={serch}
         />
+        <button onClick={handleClick}>
+          <Link to={`/recipes/${name}`}>Buscar</Link>
+        </button>
       </div>
       <div className="dad">
         <div className="conteiner-home">
@@ -43,6 +65,10 @@ const Home = () => {
                 return e;
               }
             })
+            .slice(
+              (pagina - 1) * porPagina,
+              (pagina - 1) * porPagina + porPagina
+            )
             .map((e) => {
               return (
                 <div className="conteiner-data">
@@ -56,6 +82,12 @@ const Home = () => {
                 </div>
               );
             })}
+          <Pagineichon
+            pagina={pagina}
+            setPagina={setPagina}
+            limitationCards={limitationCards}
+            setAnterior={setAnterior}
+          />
         </div>
       </div>
     </>

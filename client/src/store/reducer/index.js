@@ -2,6 +2,7 @@ import { GET_ALL, GET_NAME, GET_ID, GET_TYPE, POST_DATA } from "../accions";
 
 const initilState = {
   allDataRecipe: [],
+  allDataName: [],
   filtertData: [],
   idDataRecipe: [],
   typess: [],
@@ -17,7 +18,7 @@ const rootReducer = (state = initilState, actions) => {
     case GET_NAME:
       return {
         ...state,
-        allDataRecipe: actions.payload,
+        allDataName: actions.payload,
       };
     case GET_ID:
       return {
