@@ -18,7 +18,6 @@ const Nav = () => {
               </a>
             </li>
             <li className="nav-li">
-              {" "}
               <a target="_blank" href="https://github.com/RunyShark">
                 Git
               </a>

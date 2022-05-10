@@ -26,7 +26,7 @@ conn.sync({ force: false }).then(() => {
   server.listen(PORT, (error) => {
     if (error) {
     } else {
-      model.typesDit();
+      // model.typesDit();
       console.log(`Server en linea localhost:${PORT}`);
     }
   });

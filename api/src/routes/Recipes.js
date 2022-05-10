@@ -15,7 +15,7 @@ router.get("/", async (req, res, next) => {
     if (name) {
       apiExter = (
         await axios.get(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=20&addRecipeInformation=true`
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
         )
       ).data.results
         .filter((e) => e.title.includes(name))
@@ -56,7 +56,7 @@ router.get("/", async (req, res, next) => {
     } else {
       apiExter = (
         await axios.get(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=20&addRecipeInformation=true`
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
         )
       ).data.results.map((e) => {
         return {
