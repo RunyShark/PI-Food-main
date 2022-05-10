@@ -1,8 +1,16 @@
-import { GET_ALL, GET_NAME, GET_ID, GET_TYPE, POST_DATA } from "../accions";
+import {
+  GET_ALL,
+  GET_NAME,
+  GET_ID,
+  GET_TYPE,
+  POST_DATA,
+  // GET_NAMEGlOBLA,
+} from "../accions";
 
 const initilState = {
   allDataRecipe: [],
   allDataName: [],
+  allDataNameGlobal: [],
   filtertData: [],
   idDataRecipe: [],
   typess: [],
@@ -20,6 +28,11 @@ const rootReducer = (state = initilState, actions) => {
         ...state,
         allDataName: actions.payload,
       };
+    // case GET_NAMEGlOBLA:
+    //   return {
+    //     ...state,
+    //     allDataNameGlobal: actions.payload,
+    //   };
     case GET_ID:
       return {
         ...state,
