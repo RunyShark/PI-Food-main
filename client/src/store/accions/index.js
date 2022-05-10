@@ -41,7 +41,7 @@ export const getID = (id) => {
     try {
       const resp = await axios({
         method: "GET",
-        url: `  `,
+        url: `http://localhost:3001/recipes/${id}`,
       });
       return dispatch({ type: GET_ID, payload: resp.data });
     } catch (error) {
