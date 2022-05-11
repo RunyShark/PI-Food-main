@@ -18,10 +18,6 @@ const validation = (values) => {
       "¡El nombre debe tener entre 3 y 30 caracteres y no acepta valores especiales!";
   }
 
-  if (!values.score || values.score < 0 || values.score > 100) {
-    errors.score = "Se requiere una puntuacion minima de 10 y no mayor a 100";
-  }
-
   if (!values.lvl || values.lvl < 0 || values.lvl > 100) {
     errors.lvl = "Se requiere una puntuacion minima de 10 y no mayor a 100";
   }
@@ -45,13 +41,11 @@ const validation = (values) => {
 };
 
 const Formulario = () => {
-  //const [loadig, setLoadig] = useState({}); ---- si me da tiempo hacemos un envio de correo de la reseta al usuario
   const [errors, setErrors] = useState({});
   const [diets, setDiets] = useState([]);
   const [values, setValues] = useState({
     name: "",
     detalis: "",
-    score: 0,
     lvl: 0,
     step: "",
     img: "",
@@ -84,7 +78,7 @@ const Formulario = () => {
   };
 
   const handleTypeDiets = (e) => {
-    setDiets([...diets, e.target.value]);
+    setDiets([...diets, e.target.value]); // solucionar bug de formulario
   };
 
   return (
@@ -111,23 +105,6 @@ const Formulario = () => {
                   required
                 />
                 {errors.name && <p>{errors.name}</p>}
-              </label>
-              <label>
-                score
-                <input
-                  className="formInput"
-                  id="2"
-                  name="score"
-                  type="number"
-                  placeholder="elgie una puntuacion"
-                  value={values.score}
-                  errorMessage="¡El score  debe de ser un numero entre 1 y 99 Solo se aceptan numeros!"
-                  label="score"
-                  required={true}
-                  onChange={handleOnchange}
-                  onBlur={handleBlur}
-                />
-                {errors.score && <p>{errors.score}</p>}
               </label>
               <label>
                 lvl
@@ -196,36 +173,6 @@ const Formulario = () => {
                     {errors.detalis && <p>{errors.detalis}</p>}
                   </label>
                   <div className="yono">
-                    {/* <h4>Elije el tipo de dieta</h4>
-                    <ul>
-                      {DietType?.map((e) => (
-                        <li key={e.id}>
-                          <spawn className="yono" onChange={handleTypeDiets}>
-                            {e.name}
-                            <input
-                              value={e.name}
-                              type="radio"
-                              name="types"
-                              id={e.id}
-                            />
-                          </spawn>
-                        </li>
-                      ))}
-                    </ul> */}
-                    {/* {types.map((el, i) => { ------> problalbe solucion
-                    return (
-                      <label key={i}>
-                        <input
-                          type="checkbox"
-                          name="types"
-                          value={i + 1}
-                          onChange={handleTypeDiets}
-                        />
-                        {el.name}
-                      </label>
-                    );
-                  })} */}
-
                     <select
                       defaultValue="default"
                       onChange={(e) => handleTypeDiets(e)}
@@ -240,24 +187,7 @@ const Formulario = () => {
                           </option>
                         ))}
                     </select>
-                    {/* {values.types.map((e) => (
-                      <ul>
-                        <li>{e.name}</li>
-                      </ul>
-                    ))} */}
                   </div>
-                  {/* <label>
-                    types
-                    <input
-                      className="formInput"
-                      type="text"
-                      name="types"
-                      id="7"
-                      value={values.types}
-                      onChange={handleOnchange}
-                      onBlur={handleBlur}
-                    />
-                  </label> */}
                 </label>
               </label>
 

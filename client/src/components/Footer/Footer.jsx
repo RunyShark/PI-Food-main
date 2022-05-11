@@ -17,11 +17,21 @@ const Footer = () => {
           </div>
           {/* Column2 */}
           <div className="col">
-            <h4>Stuff</h4>
+            <h4>Contacto</h4>
             <ui className="list-unstyled">
-              <li>DANK MEMES</li>
-              <li>OTHER STUFF</li>
-              <li>GUD STUFF</li>
+              <li className="nav-li">
+                <a target="_blank" href="https://github.com/RunyShark">
+                  Git
+                </a>
+              </li>
+              <li className="nav-li">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/sergio-dario-moreno-sosa-aa204022a/"
+                >
+                  Likend
+                </a>
+              </li>
             </ui>
           </div>
           {/* Column3 */}

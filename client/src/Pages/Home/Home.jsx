@@ -1,28 +1,39 @@
-import React, { useState } from "react";
+/* eslint-disable array-callback-return */
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Pagineichon from "../Module/Pagineichon/Pagineichon";
 import Cards from "../Module/Cards/Cards";
 
-import { getName } from "../../store/accions";
+import { getName, getAll, getOrder } from "../../store/accions";
 import "./home.css";
 
 const Home = () => {
   const [pagina, setPagina] = useState(1);
   console.log(pagina);
-  const [anterior, setAnterior] = useState(0);
-  console.log(anterior);
+
   // eslint-disable-next-line no-unused-vars
-  const [porPagina, setPorPagina] = useState(5);
+  const [porPagina, setPorPagina] = useState(9);
   const [serch, setSerch] = useState("");
+  const [p, setP] = useState("");
 
   const dispacht = useDispatch();
 
-  const { allDataRecipe, allDataName } = useSelector((states) => states);
-  console.log(allDataName);
+  const { allDataRecipe } = useSelector((states) => states);
 
   const limitationCards = allDataRecipe.length / porPagina;
   console.log(limitationCards);
+
+  useEffect(() => {
+    if (p === "az") {
+      dispacht(getOrder("az"));
+    } else if (p === "za") {
+      dispacht(getOrder("za"));
+    } else {
+      dispacht(getAll());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [p]);
 
   const handleChangue = (e) => {
     e.preventDefault();
@@ -32,9 +43,6 @@ const Home = () => {
   const handleClick = () => {
     dispacht(getName(serch));
   };
-
-  //busqueda por nombre te manda a los detalles de la receta  ---
-  //testear
 
   return (
     <>
@@ -53,7 +61,6 @@ const Home = () => {
       <div className="dad">
         <div className="conteiner-home">
           {allDataRecipe
-            // eslint-disable-next-line array-callback-return
             .filter((e) => {
               if (serch === "") {
                 return e;
@@ -72,6 +79,7 @@ const Home = () => {
                     key={e.id}
                     name={e.name}
                     img={e.img}
+                    lvl={e.lvl}
                     Types={e.Types}
                     id={e.id}
                   />
@@ -83,7 +91,6 @@ const Home = () => {
             pagina={pagina}
             setPagina={setPagina}
             limitationCards={limitationCards}
-            setAnterior={setAnterior}
           />
         </div>
       </div>

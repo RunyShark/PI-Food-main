@@ -3,15 +3,14 @@ const { Recipe, Type } = require("../db.js");
 const { Op } = require("sequelize");
 const { KEY } = process.env;
 const axios = require("axios");
-const { getApiId } = require("./helper/GetApi.js");
 
 const router = Router();
 
 router.get("/", async (req, res, next) => {
+  const { name, OR } = req.query;
+  let apiExter;
+  let getRecipes;
   try {
-    const { name } = req.query;
-    let apiExter;
-    let getRecipes;
     if (name) {
       apiExter = (
         await axios.get(
@@ -24,7 +23,6 @@ router.get("/", async (req, res, next) => {
             id: e.id,
             name: e.title,
             detalis: e.summary,
-            score: e.spoonacularScore,
             lvl: e.healthScore,
             step: e.analyzedInstructions[0]?.steps.map(
               (e) => `${e.number} ${e.step}`
@@ -54,45 +52,117 @@ router.get("/", async (req, res, next) => {
       let sumaData = [...apiExter, ...getRecipes];
       res.json(sumaData);
     } else {
-      apiExter = (
-        await axios.get(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
-        )
-      ).data.results.map((e) => {
-        return {
-          id: e.id,
-          name: e.title,
-          detalis: e.summary,
-          score: e.spoonacularScore,
-          lvl: e.healthScore,
-          step: e.analyzedInstructions[0]?.steps.map(
-            (e) => `${e.number} ${e.step}`
-          ),
-          img: e.image,
-          Types: e.diets.map((d) => {
-            return { name: d };
-          }),
-        };
-      });
+      if (OR === "za") {
+        //-----z-a
+        apiExter = (
+          await axios.get(
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+          )
+        ).data.results.map((e) => {
+          return {
+            id: e.id,
+            name: e.title,
+            detalis: e.summary,
+            lvl: e.healthScore,
+            step: e.analyzedInstructions[0]?.steps.map(
+              (e) => `${e.number} ${e.step}`
+            ),
+            img: e.image,
+            Types: e.diets.map((d) => {
+              return { name: d };
+            }),
+          };
+        });
 
-      getRecipes = await Recipe.findAll({
-        include: [
-          {
-            model: Type,
-            attributes: ["name"],
-            through: { attributes: [] },
-          },
-        ],
-      });
+        getRecipes = await Recipe.findAll({
+          include: [
+            {
+              model: Type,
+              attributes: ["name"],
+              through: { attributes: [] },
+            },
+          ],
+        });
 
-      let sumaData = [...getRecipes, ...apiExter];
-      res.json(sumaData);
+        let sumaData = [...getRecipes, ...apiExter];
+        sumaData.sort((a, b) => (a.name > b.name ? -1 : 1));
+        res.json(sumaData);
+      } else if (OR === "az") {
+        //a-z
+        apiExter = (
+          await axios.get(
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+          )
+        ).data.results.map((e) => {
+          return {
+            id: e.id,
+            name: e.title,
+            detalis: e.summary,
+            lvl: e.healthScore,
+            step: e.analyzedInstructions[0]?.steps.map(
+              (e) => `${e.number} ${e.step}`
+            ),
+            img: e.image,
+            Types: e.diets.map((d) => {
+              return { name: d };
+            }),
+          };
+        });
+
+        getRecipes = await Recipe.findAll({
+          include: [
+            {
+              model: Type,
+              attributes: ["name"],
+              through: { attributes: [] },
+            },
+          ],
+        });
+
+        let sumaData = [...getRecipes, ...apiExter];
+        sumaData.sort((a, b) => (a.name > b.name ? 1 : -1));
+        res.json(sumaData);
+      } else {
+        //-------------------------------------------------------------------------------------------
+        apiExter = (
+          await axios.get(
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+          )
+        ).data.results.map((e) => {
+          return {
+            id: e.id,
+            name: e.title,
+            detalis: e.summary,
+            lvl: e.healthScore,
+            step: e.analyzedInstructions[0]?.steps.map(
+              (e) => `${e.number} ${e.step}`
+            ),
+            img: e.image,
+            Types: e.diets.map((d) => {
+              return { name: d };
+            }),
+          };
+        });
+
+        getRecipes = await Recipe.findAll({
+          include: [
+            {
+              model: Type,
+              attributes: ["name"],
+              through: { attributes: [] },
+            },
+          ],
+        });
+
+        let sumaData = [...getRecipes, ...apiExter];
+        res.json(sumaData);
+      }
     }
   } catch (error) {
     next(error);
   }
 });
-
+/*-------------------------------------------------*/
 router.get("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -117,7 +187,6 @@ router.get("/:id", async (req, res, next) => {
       esta = {
         name: esta.title,
         detalis: esta.summary,
-        score: esta.spoonacularScore,
         lvl: esta.healthScore,
         step: esta.analyzedInstructions[0]?.steps.map(
           (e) => `<ol> <il>${e.number}</il> ${e.step} </ol>`

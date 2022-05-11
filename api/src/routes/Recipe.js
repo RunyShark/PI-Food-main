@@ -4,11 +4,10 @@ const { Recipe } = require("../db.js");
 const router = Router();
 router.post("/", async (req, res, next) => {
   try {
-    const { name, detalis, score, lvl, step, img, Types } = req.body;
+    const { name, detalis, lvl, step, img, Types } = req.body;
     const newRecipe = await Recipe.create({
       name,
       detalis,
-      score,
       lvl,
       step,
       img,

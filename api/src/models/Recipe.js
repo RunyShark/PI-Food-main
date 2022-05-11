@@ -19,9 +19,6 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      score: {
-        type: DataTypes.STRING,
-      },
       lvl: {
         type: DataTypes.STRING,
         allowNull: false,

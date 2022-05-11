@@ -1,11 +1,11 @@
-const CardsName = ({ id, name, Types, img, score, lvl, detalis, step }) => {
+const CardsName = ({ name, Types, img, lvl, detalis, step }) => {
   return (
     <>
       <div>
         <h2>{name}</h2>
-        <p>{score}</p>
-        <p>{lvl}</p>
+        <p>Puntuacion: {lvl}</p>
         <ul>
+          <p>Dietas</p>
           {Types.map((e) => (
             <li key={e.name}>{e.name}</li>
           ))}

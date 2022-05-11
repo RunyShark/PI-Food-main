@@ -4,13 +4,12 @@ import {
   GET_ID,
   GET_TYPE,
   POST_DATA,
-  // GET_NAMEGlOBLA,
+  GET_OR,
 } from "../accions";
 
 const initilState = {
   allDataRecipe: [],
   allDataName: [],
-  allDataNameGlobal: [],
   filtertData: [],
   idDataRecipe: [],
   typess: [],
@@ -23,16 +22,18 @@ const rootReducer = (state = initilState, actions) => {
         ...state,
         allDataRecipe: actions.payload,
       };
+    case GET_OR:
+      return {
+        ...state,
+        allDataRecipe: actions.payload,
+      };
+
     case GET_NAME:
       return {
         ...state,
         allDataName: actions.payload,
       };
-    // case GET_NAMEGlOBLA:
-    //   return {
-    //     ...state,
-    //     allDataNameGlobal: actions.payload,
-    //   };
+
     case GET_ID:
       return {
         ...state,

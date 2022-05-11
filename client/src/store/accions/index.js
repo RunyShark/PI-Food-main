@@ -4,6 +4,7 @@ export const GET_ALL = "GE_TALL";
 export const GET_NAME = "GET_NAME";
 export const GET_NAMEGlOBLA = "GET_NAMEGlOBLA";
 export const GET_ID = "GET_ID";
+export const GET_OR = "GET_OR";
 export const GET_TYPE = "GET_TYPE";
 export const POST_DATA = "POST_DATA";
 export const SORT_DATA = "SORT_DATA";
@@ -37,19 +38,20 @@ export const getName = (name) => {
   };
 };
 
-// export const getNameGlobal = (name) => {
-//   return async (dispatch) => {
-//     try {
-//       const resp = await axios({
-//         method: "GET",
-//         url: `http://localhost:3001/recipesGlobla?name=${name}`,
-//       });
-//       return dispatch({ type: GET_NAMEGlOBLA, payload: resp.data });
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-// };
+export const getOrder = (Order) => {
+  return async (dispatch) => {
+    try {
+      const resp = await axios({
+        method: "GET",
+        url: `http://localhost:3001/recipes?OR=${Order}`,
+      });
+      return dispatch({ type: GET_OR, payload: resp.data });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export const getID = (id) => {
   return async (dispatch) => {
     try {
