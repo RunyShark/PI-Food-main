@@ -38,20 +38,6 @@ export const getName = (name) => {
   };
 };
 
-export const getMm = (MM) => {
-  return async (dispatch) => {
-    try {
-      const resp = await axios({
-        method: "GET",
-        url: `http://localhost:3001/recipes?OR=${MM}`,
-      });
-      return dispatch({ type: GET_MM, payload: resp.data });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-};
-
 export const getOrder = (Order) => {
   return async (dispatch) => {
     try {

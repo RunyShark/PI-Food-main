@@ -12,16 +12,14 @@ import {
   getName,
   getAll,
   getOrder,
-  getMm,
   getType,
-  filterType,
+  //filterType,
 } from "../../store/accions";
 import "./home.css";
 
 const Home = () => {
   const [pagina, setPagina] = useState(1);
   const [Typediets, setTypeDiets] = useState([]);
-  console.log(Typediets);
 
   // eslint-disable-next-line no-unused-vars
   const [porPagina, setPorPagina] = useState(9);
@@ -40,9 +38,9 @@ const Home = () => {
     } else if (p === "za") {
       dispacht(getOrder("za"));
     } else if (p === "mayor") {
-      dispacht(getMm("mayor"));
+      dispacht(getOrder("mayor"));
     } else if (p === "menor") {
-      dispacht(getMm("menor"));
+      dispacht(getOrder("menor"));
     } else {
       dispacht(getAll());
     }

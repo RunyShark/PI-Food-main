@@ -6,8 +6,7 @@ import {
   GET_TYPE,
   POST_DATA,
   GET_OR,
-  GET_MM,
-  FILTER_TYPE,
+  //FILTER_TYPE,
 } from "../accions";
 
 const initilState = {
@@ -27,11 +26,6 @@ const rootReducer = (state = initilState, actions) => {
         allDataRecipeCopia: actions.payload,
       };
     case GET_OR:
-      return {
-        ...state,
-        allDataRecipe: actions.payload,
-      };
-    case GET_MM:
       return {
         ...state,
         allDataRecipe: actions.payload,
