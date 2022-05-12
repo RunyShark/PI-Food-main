@@ -6,12 +6,11 @@ import {
   GET_TYPE,
   POST_DATA,
   GET_OR,
-  //FILTER_TYPE,
+  FILTER_TYPE,
 } from "../accions";
 
 const initilState = {
   allDataRecipe: [],
-  allDataRecipeCopia: [],
   allDataName: [],
   idDataRecipe: [],
   typess: [],
@@ -23,13 +22,27 @@ const rootReducer = (state = initilState, actions) => {
       return {
         ...state,
         allDataRecipe: actions.payload,
-        allDataRecipeCopia: actions.payload,
       };
     case GET_OR:
       return {
         ...state,
         allDataRecipe: actions.payload,
       };
+    case FILTER_TYPE:
+      return {
+        ...state,
+        allDataRecipe: state.allDataRecipe.filter((e) => {
+          let name = e.Types.map((e) => e.name);
+          if (name.includes(actions.payload)) {
+            console.log(e);
+            return e;
+          }
+        }),
+      };
+
+    // Types: e.diets.map((d) => {
+    //   return { name: d };
+    // }),
 
     case GET_NAME:
       return {

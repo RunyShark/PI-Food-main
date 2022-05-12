@@ -13,13 +13,13 @@ import {
   getAll,
   getOrder,
   getType,
-  //filterType,
+  filterType,
 } from "../../store/accions";
 import "./home.css";
 
 const Home = () => {
   const [pagina, setPagina] = useState(1);
-  const [Typediets, setTypeDiets] = useState([]);
+  //const [Typediets, setTypeDiets] = useState("");
 
   // eslint-disable-next-line no-unused-vars
   const [porPagina, setPorPagina] = useState(9);
@@ -41,6 +41,26 @@ const Home = () => {
       dispacht(getOrder("mayor"));
     } else if (p === "menor") {
       dispacht(getOrder("menor"));
+    } else if (p === "pescatarian") {
+      dispacht(filterType("pescatarian"));
+    } else if (p === "gluten free") {
+      dispacht(filterType("gluten free"));
+    } else if (p === "dairy free") {
+      dispacht(filterType("dairy free"));
+    } else if (p === "lacto ovo vegetarian") {
+      dispacht(filterType("lacto ovo vegetarian"));
+    } else if (p === "vegan") {
+      dispacht(filterType("vegan"));
+    } else if (p === "paleolithic") {
+      dispacht(filterType("paleolithic"));
+    } else if (p === "primal") {
+      dispacht(filterType("primal"));
+    } else if (p === "fodmap friendly") {
+      dispacht(filterType("fodmap friendly"));
+    } else if (p === "whole 30n") {
+      dispacht(filterType("whole 30"));
+    } else if (p === "ketogenic") {
+      dispacht(filterType("ketogenic"));
     } else {
       dispacht(getAll());
     }
@@ -50,6 +70,7 @@ const Home = () => {
 
   useEffect(() => {
     dispacht(getType());
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -66,9 +87,9 @@ const Home = () => {
     setP(e.target.value);
   };
 
-  const handleTypeDiets = (e) => {
-    setTypeDiets([...Typediets, e.target.value]); // solucionar bug de formulario
-  };
+  // const handleTypeDiets = (e) => {
+  //   setTypeDiets(e.target.value); // solucionar bug de formulario
+  // };
   return (
     <>
       <div className="titel-home">
@@ -105,14 +126,15 @@ const Home = () => {
           </select>
         </div>
         <div>
-          <select defaultValue="default" onChange={(e) => handleTypeDiets(e)}>
+          <select defaultValue="default" onChange={(e) => haldechan(e)}>
             <option value="default" disabled>
               Dietas
             </option>
+
             {typess &&
-              typess.map((d) => (
-                <option value={d.name} key={d.id}>
-                  {d.name}
+              typess.map((e) => (
+                <option value={e.name} key={e.id}>
+                  {e.name}
                 </option>
               ))}
             <option value="lacto ovo vegetarian">lacto ovo vegetarian</option>
