@@ -21,7 +21,6 @@ function App() {
           <Route path="/create" element={<Formuls />} />
           <Route path="/recipes/data" element={<DetaisName />} />
           <Route path="/recipes/data/:id" element={<Detail />} />
-          <Route path="/x" element={<DetaisName />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

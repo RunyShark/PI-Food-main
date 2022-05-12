@@ -122,6 +122,74 @@ router.get("/", async (req, res, next) => {
         let sumaData = [...getRecipes, ...apiExter];
         sumaData.sort((a, b) => (a.name > b.name ? 1 : -1));
         res.json(sumaData);
+      } else if (OR === "menor") {
+        apiExter = (
+          await axios.get(
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+          )
+        ).data.results.map((e) => {
+          return {
+            id: e.id,
+            name: e.title,
+            detalis: e.summary,
+            lvl: e.healthScore,
+            step: e.analyzedInstructions[0]?.steps.map(
+              (e) => `${e.number} ${e.step}`
+            ),
+            img: e.image,
+            Types: e.diets.map((d) => {
+              return { name: d };
+            }),
+          };
+        });
+
+        getRecipes = await Recipe.findAll({
+          include: [
+            {
+              model: Type,
+              attributes: ["name"],
+              through: { attributes: [] },
+            },
+          ],
+        });
+
+        let sumaData = [...getRecipes, ...apiExter];
+        sumaData.sort((a, b) => (a.lvl > b.lvl ? 1 : -1));
+        res.json(sumaData);
+      } else if (OR === "mayor") {
+        apiExter = (
+          await axios.get(
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+          )
+        ).data.results.map((e) => {
+          return {
+            id: e.id,
+            name: e.title,
+            detalis: e.summary,
+            lvl: e.healthScore,
+            step: e.analyzedInstructions[0]?.steps.map(
+              (e) => `${e.number} ${e.step}`
+            ),
+            img: e.image,
+            Types: e.diets.map((d) => {
+              return { name: d };
+            }),
+          };
+        });
+
+        getRecipes = await Recipe.findAll({
+          include: [
+            {
+              model: Type,
+              attributes: ["name"],
+              through: { attributes: [] },
+            },
+          ],
+        });
+
+        let sumaData = [...getRecipes, ...apiExter];
+        sumaData.sort((a, b) => (a.lvl > b.lvl ? -1 : 1));
+        res.json(sumaData);
       } else {
         //-------------------------------------------------------------------------------------------
         apiExter = (

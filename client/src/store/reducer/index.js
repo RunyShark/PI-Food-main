@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import {
   GET_ALL,
   GET_NAME,
@@ -5,12 +6,14 @@ import {
   GET_TYPE,
   POST_DATA,
   GET_OR,
+  GET_MM,
+  FILTER_TYPE,
 } from "../accions";
 
 const initilState = {
   allDataRecipe: [],
+  allDataRecipeCopia: [],
   allDataName: [],
-  filtertData: [],
   idDataRecipe: [],
   typess: [],
 };
@@ -21,8 +24,14 @@ const rootReducer = (state = initilState, actions) => {
       return {
         ...state,
         allDataRecipe: actions.payload,
+        allDataRecipeCopia: actions.payload,
       };
     case GET_OR:
+      return {
+        ...state,
+        allDataRecipe: actions.payload,
+      };
+    case GET_MM:
       return {
         ...state,
         allDataRecipe: actions.payload,
@@ -44,6 +53,7 @@ const rootReducer = (state = initilState, actions) => {
         ...state,
         typess: actions.payload,
       };
+
     case POST_DATA:
       return {
         ...state,

@@ -13,8 +13,6 @@ const Pagineichon = ({ pagina, setPagina, limitationCards, setAnterior }) => {
       <button
         onClick={() => {
           setPagina(pagina > 2 ? pagina - 1 : (pagina = 1));
-
-          console.log("I");
         }}
       >
         izquierda
@@ -22,7 +20,6 @@ const Pagineichon = ({ pagina, setPagina, limitationCards, setAnterior }) => {
       <button
         onClick={() => {
           setPagina(pagina < 20 ? pagina + 1 : (pagina = 1));
-          console.log("D");
         }}
       >
         derecha

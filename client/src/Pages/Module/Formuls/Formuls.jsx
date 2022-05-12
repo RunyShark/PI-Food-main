@@ -101,7 +101,6 @@ const Formulario = () => {
                   value={values.name}
                   onChange={handleOnchange}
                   onBlur={handleBlur}
-                  errorMessage="¡La receta debe de tener entre 3 y 30 caracteres, solo se acepta texto!"
                   required
                 />
                 {errors.name && <p>{errors.name}</p>}
@@ -115,7 +114,6 @@ const Formulario = () => {
                   type="number"
                   placeholder="elije un nivel"
                   value={values.lvl}
-                  errorMessage="¡El lvl  debe de ser un numero entre 1 y 99 Solo se aceptan numeros!"
                   label="lvl"
                   required={true}
                   onChange={handleOnchange}
@@ -131,7 +129,6 @@ const Formulario = () => {
                     type="text"
                     placeholder="Coloca una imagen"
                     value={values.img}
-                    errorMessage="¡Debe de ser una url de una imgane valida!"
                     label="img"
                     required={true}
                     onChange={handleOnchange}
@@ -148,7 +145,6 @@ const Formulario = () => {
                       value={values.step}
                       cols="50"
                       rows="5"
-                      errorMessage="¡La detalis  debe tener entre 3 y 300 caracteres, solo se acepta texto!"
                       required={true}
                       onChange={handleOnchange}
                       onBlur={handleBlur}
@@ -163,7 +159,6 @@ const Formulario = () => {
                       id="6"
                       placeholder="Escribe una detalis corespondiente"
                       value={values.detalis}
-                      errorMessage="¡La detalis  debe tener entre 3 y 300 caracteres, solo se acepta texto!"
                       cols="50"
                       rows="5"
                       required={true}

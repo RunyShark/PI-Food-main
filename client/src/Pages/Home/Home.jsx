@@ -4,13 +4,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Pagineichon from "../Module/Pagineichon/Pagineichon";
 import Cards from "../Module/Cards/Cards";
+// import OrderAz from "./OR/OrderAz/OrderAz";
+// import OrderScore from "./OR/OrderScore/OrderScore";
+// import OrderTypes from "./OR/OrderTypes/OrderTypes";
 
-import { getName, getAll, getOrder } from "../../store/accions";
+import {
+  getName,
+  getAll,
+  getOrder,
+  getMm,
+  getType,
+  filterType,
+} from "../../store/accions";
 import "./home.css";
 
 const Home = () => {
   const [pagina, setPagina] = useState(1);
-  console.log(pagina);
+  const [Typediets, setTypeDiets] = useState([]);
+  console.log(Typediets);
 
   // eslint-disable-next-line no-unused-vars
   const [porPagina, setPorPagina] = useState(9);
@@ -19,21 +30,30 @@ const Home = () => {
 
   const dispacht = useDispatch();
 
-  const { allDataRecipe } = useSelector((states) => states);
+  const { allDataRecipe, typess } = useSelector((states) => states);
 
   const limitationCards = allDataRecipe.length / porPagina;
-  console.log(limitationCards);
 
   useEffect(() => {
     if (p === "az") {
       dispacht(getOrder("az"));
     } else if (p === "za") {
       dispacht(getOrder("za"));
+    } else if (p === "mayor") {
+      dispacht(getMm("mayor"));
+    } else if (p === "menor") {
+      dispacht(getMm("menor"));
     } else {
       dispacht(getAll());
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [p]);
+
+  useEffect(() => {
+    dispacht(getType());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleChangue = (e) => {
     e.preventDefault();
@@ -43,7 +63,14 @@ const Home = () => {
   const handleClick = () => {
     dispacht(getName(serch));
   };
+  const haldechan = (e) => {
+    e.preventDefault();
+    setP(e.target.value);
+  };
 
+  const handleTypeDiets = (e) => {
+    setTypeDiets([...Typediets, e.target.value]); // solucionar bug de formulario
+  };
   return (
     <>
       <div className="titel-home">
@@ -57,6 +84,42 @@ const Home = () => {
         <button onClick={handleClick}>
           <Link to={`/recipes/data`}>Buscar</Link>
         </button>
+      </div>
+      <div>
+        <div>
+          <select defaultValue="default" onChange={(e) => haldechan(e)}>
+            <option value="default" disabled>
+              Order Alfa
+            </option>
+            <option value="">Inicio</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+          </select>
+        </div>
+        <div>
+          <select defaultValue="default" onChange={(e) => haldechan(e)}>
+            <option value="default" disabled>
+              SCORE
+            </option>
+            <option value="">Inicio</option>
+            <option value="mayor">Mayor</option>
+            <option value="menor">Menor</option>
+          </select>
+        </div>
+        <div>
+          <select defaultValue="default" onChange={(e) => handleTypeDiets(e)}>
+            <option value="default" disabled>
+              Dietas
+            </option>
+            {typess &&
+              typess.map((d) => (
+                <option value={d.name} key={d.id}>
+                  {d.name}
+                </option>
+              ))}
+            <option value="lacto ovo vegetarian">lacto ovo vegetarian</option>
+          </select>
+        </div>
       </div>
       <div className="dad">
         <div className="conteiner-home">
