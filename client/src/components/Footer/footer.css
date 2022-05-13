@@ -1,14 +1,79 @@
-.main-footer {
-  color: #264653;
-  background-color: #e9c46a;
-  padding-top: 3em;
-  position: relative;
-  bottom: 0;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+.pie-pagina {
   width: 100%;
+  background-color: #e9c46a;
+  padding-top: 2em;
+}
+.pie-pagina .grupo-1 {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+  color: #003049;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+  color: #003049;
+  margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .box img {
+  height: 50px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: azure;
+  margin-right: 20px;
+}
+
+.pie-pagina .grupo-2 {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  color: #003049;
+}
+
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+
+.footer-conteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid red;
+  background-color: #faefd2;
+}
+
+.footer-colum {
+  border: 1px solid red;
+  align-self: flex-start;
+}
+
+.footer-colum h4 {
+  font-size: 18px;
+}
+
+.footer-final {
+  text-align: center;
+
 }
 
 .list-unstyled-d {
   border-radius: 100px;
   border: 10px solid #264653;
   width: 250px;
-}
+} */
