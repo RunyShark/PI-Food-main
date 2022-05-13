@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getID } from "../../../store/accions";
 import { Link } from "react-router-dom";
+import "./detail.css";
 
 const Detail = () => {
   const dispacht = useDispatch();
@@ -46,8 +47,13 @@ const Detail = () => {
           </div>
         </div>
       </div>
-
-      <Link to={`/home`}>Regresar</Link>
+      <div>
+        <button className="details-buttom">
+          <Link className="details-buttom" to={`/home`}>
+            Regresar
+          </Link>
+        </button>
+      </div>
     </>
   );
 };

@@ -1,27 +1,66 @@
+@font-face {
+  font-family: "Rocher";
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
 .nav-dad {
   background-color: #2a9d8f;
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  align-items: center;
+  padding: 10px;
 }
 
-.nav-conteiner {
-  display: flex;
-  flex-flow: row-reverse wrap;
+.nav-icon {
+  height: 50px;
+  padding: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  transition: 0.8s;
+  font-weight: bold;
+  list-style: none;
 }
+
+.nav-dad img:hover {
+  background-color: #e9c46a;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+}
+
+.nav-logo h2 {
+  margin-left: 20px;
+  font-family: "Rocher";
+  font-size: 50px;
+}
+
+/* .nav-dad {
+  
+  padding: 1px;
+}
+
+.nav-logo {
+  display: flex;
+}
+
+
 
 .nav-conteiner li {
-  background-color: rgba(255, 255, 255);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  margin: 20px;
-  padding: 10px;
-  list-style: none;
+  margin: 15px;
+  padding: 15px;
+  height: auto;
+  font-size: 20px;
   border-radius: 10px;
+  transition: 0.8s;
+  font-weight: bold;
+  list-style: none;
 }
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.nav-conteiner a:visited {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
+.nav-conteiner li:hover {
+  background-color: #e9c46a;
+} */

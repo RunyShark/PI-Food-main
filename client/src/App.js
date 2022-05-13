@@ -12,19 +12,21 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="page-container">
-      <div className="content-wart">
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Lending />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/create" element={<Formuls />} />
-          <Route path="/recipes/data" element={<DetaisName />} />
-          <Route path="/recipes/data/:id" element={<Detail />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
+    <div>
+      <div className="page-container">
+        <div className="content-wart">
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Lending />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/create" element={<Formuls />} />
+            <Route path="/recipes/data" element={<DetaisName />} />
+            <Route path="/recipes/data/:id" element={<Detail />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }

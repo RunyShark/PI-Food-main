@@ -4,10 +4,33 @@
 }
 
 .titel-home input {
+  border: 2px solid #264653;
   height: 50px;
   width: 500px;
   border-radius: 10px;
+  transition: 1s;
 }
+.titel-home input:hover {
+  background-color: #e9f2f5;
+}
+.search-icon {
+  height: 35px;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.home-select {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  border: 2px solid #2a9d8f;
+  border-radius: 10px;
+  margin: 5px;
+}
+.home-select option {
+  text-align: center;
+}
+
 .conteiner-home {
   display: grid;
   grid-template-columns: auto auto auto;

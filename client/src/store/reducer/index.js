@@ -11,6 +11,7 @@ import {
 
 const initilState = {
   allDataRecipe: [],
+  recipesCopia: [],
   allDataName: [],
   idDataRecipe: [],
   typess: [],
@@ -28,6 +29,7 @@ const rootReducer = (state = initilState, actions) => {
         ...state,
         allDataRecipe: actions.payload,
       };
+
     case FILTER_TYPE:
       return {
         ...state,

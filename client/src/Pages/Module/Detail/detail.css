@@ -1,0 +1,28 @@
+.details-dad {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.details-titel {
+  border: 2px solid red;
+}
+.details-name {
+  border: 2px solid red;
+}
+
+.details-img {
+  border: 2px solid red;
+}
+
+.details-lvl {
+  border: 2px solid red;
+}
+.details-steps {
+  border: 2px solid red;
+}
+.details-buttom {
+  border: 2px solid red;
+}
+.details-data {
+  border: 2px solid red;
+}

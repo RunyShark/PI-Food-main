@@ -4,10 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Pagineichon from "../Module/Pagineichon/Pagineichon";
 import Cards from "../Module/Cards/Cards";
-// import OrderAz from "./OR/OrderAz/OrderAz";
-// import OrderScore from "./OR/OrderScore/OrderScore";
-// import OrderTypes from "./OR/OrderTypes/OrderTypes";
-
+import search from "../../helpers/Img/seach-removebg-preview.png";
 import {
   getName,
   getAll,
@@ -19,8 +16,6 @@ import "./home.css";
 
 const Home = () => {
   const [pagina, setPagina] = useState(1);
-  //const [Typediets, setTypeDiets] = useState("");
-
   // eslint-disable-next-line no-unused-vars
   const [porPagina, setPorPagina] = useState(9);
   const [serch, setSerch] = useState("");
@@ -93,7 +88,6 @@ const Home = () => {
   return (
     <>
       <div className="titel-home">
-        <h1>Busqueda</h1>
         <input
           type="text"
           placeholder="Busqueda"
@@ -101,12 +95,18 @@ const Home = () => {
           value={serch}
         />
         <button onClick={handleClick}>
-          <Link to={`/recipes/data`}>Buscar</Link>
+          <Link to={`/recipes/data`}>
+            <img src={search} alt="" className="search-icon" />
+          </Link>
         </button>
       </div>
       <div>
         <div>
-          <select defaultValue="default" onChange={(e) => haldechan(e)}>
+          <select
+            defaultValue="default"
+            onChange={(e) => haldechan(e)}
+            className="home-select"
+          >
             <option value="default" disabled>
               Order Alfa
             </option>
@@ -116,7 +116,11 @@ const Home = () => {
           </select>
         </div>
         <div>
-          <select defaultValue="default" onChange={(e) => haldechan(e)}>
+          <select
+            defaultValue="default"
+            onChange={(e) => haldechan(e)}
+            className="home-select"
+          >
             <option value="default" disabled>
               SCORE
             </option>
@@ -126,11 +130,15 @@ const Home = () => {
           </select>
         </div>
         <div>
-          <select defaultValue="default" onChange={(e) => haldechan(e)}>
+          <select
+            defaultValue="default"
+            onChange={(e) => haldechan(e)}
+            className="home-select"
+          >
             <option value="default" disabled>
               Dietas
             </option>
-
+            <option value="">Inicio</option>
             {typess &&
               typess.map((e) => (
                 <option value={e.name} key={e.id}>
@@ -169,7 +177,6 @@ const Home = () => {
                 </div>
               );
             })}
-
           <Pagineichon
             pagina={pagina}
             setPagina={setPagina}

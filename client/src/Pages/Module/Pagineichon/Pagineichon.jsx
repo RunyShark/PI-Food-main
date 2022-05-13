@@ -1,5 +1,6 @@
 import React from "react";
-
+import rite from "../../../helpers/Img/xdcddsdasdsad-removebg-preview.png";
+import left from "../../../helpers/Img/leftd-removebg-preview.png";
 import "./pagineichon.css";
 
 const Pagineichon = ({ pagina, setPagina, limitationCards, setAnterior }) => {
@@ -15,14 +16,14 @@ const Pagineichon = ({ pagina, setPagina, limitationCards, setAnterior }) => {
           setPagina(pagina > 2 ? pagina - 1 : (pagina = 1));
         }}
       >
-        izquierda
+        <img src={left} alt="" className="pagination-icon" />
       </button>
       <button
         onClick={() => {
           setPagina(pagina < 20 ? pagina + 1 : (pagina = 1));
         }}
       >
-        derecha
+        <img src={rite} alt="" className="pagination-icon" />
       </button>
     </div>
   );

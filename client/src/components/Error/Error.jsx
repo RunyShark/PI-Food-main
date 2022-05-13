@@ -6,7 +6,7 @@ const Error = () => {
     <>
       <div className="Error-dad">
         <div className="Error-tittle">
-          <h1>Soy Error</h1>
+          <h1>Chupapi</h1>
         </div>
         <div className="Error-img">
           <img src={ImgError} alt="IMG" />
