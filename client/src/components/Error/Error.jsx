@@ -5,12 +5,9 @@ const Error = () => {
   return (
     <>
       <div className="Error-dad">
-        <div className="Error-tittle">
-          <h1>Chupapi</h1>
-        </div>
-        <div className="Error-img">
-          <img src={ImgError} alt="IMG" />
-        </div>
+        <h1>Ruta no disponible</h1>
+
+        <img src={ImgError} alt="IMG" />
       </div>
     </>
   );
