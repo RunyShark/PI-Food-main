@@ -21,7 +21,7 @@ const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const model = require("../api/src/routes/helper/GetPreTypes.js");
 
-conn.sync({ force: false }).then(() => {
+conn.sync({ force: true }).then(() => {
   server.listen(process.env.PORT || 3001, () => {
     model.typesDit();
 
