@@ -19,14 +19,14 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
-//const model = require("../api/src/routes/helper/GetPreTypes.js");
+const model = require("../api/src/routes/helper/GetPreTypes.js");
 
-conn.sync({ force: false }).then(() => {
+conn.sync({ force: true }).then(() => {
   server.listen(process.env.PORT, (error) => {
     if (error) {
       console.log(`(ㆆ_ㆆ)`);
     } else {
-      //model.typesDit();
+      model.typesDit();
       console.log(`(👍 ͡❛ ͜ʖ ͡❛)👍`);
     }
   });
