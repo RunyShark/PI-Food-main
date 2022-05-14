@@ -23,7 +23,7 @@ const Home = () => {
 
   const dispacht = useDispatch();
 
-  const { allDataRecipe, typess } = useSelector((states) => states);
+  const { allDataRecipe } = useSelector((states) => states);
 
   useEffect(() => {
     if (p === "az") {
@@ -61,11 +61,11 @@ const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [p]);
 
-  useEffect(() => {
-    dispacht(getType());
+  // useEffect(() => {
+  //   dispacht(getType());
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   const handleChangue = (e) => {
     e.preventDefault();
@@ -122,7 +122,7 @@ const Home = () => {
                 <option value="menor">Menor</option>
               </select>
 
-              <select defaultValue="default" onChange={(e) => haldechan(e)}>
+              {/* <select defaultValue="default" onChange={(e) => haldechan(e)}>
                 <option value="default" disabled>
                   Dietas
                 </option>
@@ -136,7 +136,7 @@ const Home = () => {
                 <option value="lacto ovo vegetarian">
                   lacto ovo vegetarian
                 </option>
-              </select>
+              </select> */}
             </div>
           </div>
         </div>
