@@ -190,7 +190,7 @@ const Formulario = () => {
                 type="submit"
                 value="Send"
                 onClick={() =>
-                  window.location.reload(alert("solicitud enviado"))
+                  window.location.reload(alert("añadido correctamente ✔ 👌"))
                 }
               >
                 Agregar

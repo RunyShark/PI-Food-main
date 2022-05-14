@@ -14,7 +14,7 @@ export const getAll = () => {
     try {
       const resp = await axios({
         method: "GET",
-        url: "http://localhost:3001/recipes",
+        url: "/recipes",
       });
       console.log(resp);
       return dispatch({ type: GET_ALL, payload: resp.data });
@@ -29,7 +29,7 @@ export const getName = (name) => {
     try {
       const resp = await axios({
         method: "GET",
-        url: `http://localhost:3001/recipes?name=${name}`,
+        url: `/recipes?name=${name}`,
       });
       return dispatch({ type: GET_NAME, payload: resp.data });
     } catch (error) {
@@ -43,7 +43,7 @@ export const getOrder = (Order) => {
     try {
       const resp = await axios({
         method: "GET",
-        url: `http://localhost:3001/recipes?OR=${Order}`,
+        url: `/recipes?OR=${Order}`,
       });
       return dispatch({ type: GET_OR, payload: resp.data });
     } catch (error) {
@@ -57,7 +57,7 @@ export const getID = (id) => {
     try {
       const resp = await axios({
         method: "GET",
-        url: `http://localhost:3001/recipes/${id}`,
+        url: `/recipes/${id}`,
       });
       return dispatch({ type: GET_ID, payload: resp.data });
     } catch (error) {
@@ -71,7 +71,7 @@ export const getType = () => {
     try {
       const resp = await axios({
         method: "GET",
-        url: `http://localhost:3001/type`,
+        url: `/type`,
       });
       return dispatch({ type: GET_TYPE, payload: resp.data });
     } catch (error) {
@@ -90,7 +90,7 @@ export const filterType = (type) => {
 //local
 export const postRecipe = (data) => {
   return async () => {
-    const resp = await axios.post(`http://localhost:3001/recipe`, data);
+    const resp = await axios.post(`/recipe`, data);
     return resp;
   };
 };

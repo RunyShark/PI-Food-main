@@ -19,15 +19,15 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
-const PORT = 3001;
 const model = require("../api/src/routes/helper/GetPreTypes.js");
 
 conn.sync({ force: false }).then(() => {
-  server.listen(PORT, (error) => {
+  server.listen(process.env.PORT, (error) => {
     if (error) {
+      console.log(`(ㆆ_ㆆ)`);
     } else {
       //model.typesDit();
-      console.log(`Server en linea localhost:${PORT}`);
+      console.log(`(👍 ͡❛ ͜ʖ ͡❛)👍`);
     }
   });
 });
