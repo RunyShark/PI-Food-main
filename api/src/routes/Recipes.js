@@ -248,7 +248,7 @@ router.get("/:id", async (req, res, next) => {
     } else {
       esta = (
         await axios.get(
-          `https://api.spoonacular.com/recipes/${id}/information?apiKey=${KEY}`
+          `https://api.spoonacular.com/recipes/${id}/information?apiKey=06713865e5b04e40a2b774024d19b58f`
         )
       ).data;
 
