@@ -3,21 +3,30 @@ import "./cards.css";
 const Cards = ({ id, name, Types, img, lvl }) => {
   return (
     <>
-      <div>
-        <h2>{name}</h2>
-        <p>Puntuacion:{lvl}</p>
-        <ul>
-          <p>Tipo de dieta</p>
+      <div className="card-dad-map">
+        <div>
+          <h2 className="titel-card">{name}</h2>
+
+          <h4>
+            Puntuacion <h5 className="number-card">{lvl}</h5>
+          </h4>
+          <hr />
+          <h5 className="number-card">Tipo de dieta</h5>
+
           {Types.map((e) => (
-            <li key={e.name}>{e.name}</li>
+            <p key={e.name}>{e.name}</p>
           ))}
-        </ul>
-        <div className="card-conteiner-btn">
-          <button>
-            <Link to={`/recipes/data/${id}`}>Detalles</Link>
-          </button>
+          <div className="card-conteiner-btn">
+            <hr />
+            <button>
+              <Link to={`/recipes/data/${id}`}>Detalles</Link>
+            </button>
+          </div>
         </div>
-        <img src={img} alt={img} />
+
+        <div className="img-card">
+          <img src={img} alt={img} width="300px" />
+        </div>
       </div>
     </>
   );

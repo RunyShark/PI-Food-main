@@ -87,101 +87,93 @@ const Home = () => {
   // };
   return (
     <>
-      <div className="titel-home">
-        <input
-          type="text"
-          placeholder="Busqueda"
-          onChange={handleChangue}
-          value={serch}
-        />
-        <button onClick={handleClick}>
-          <Link to={`/recipes/data`}>
-            <img src={search} alt="" className="search-icon" />
-          </Link>
-        </button>
-      </div>
-      <div>
-        <div>
-          <select
-            defaultValue="default"
-            onChange={(e) => haldechan(e)}
-            className="home-select"
-          >
-            <option value="default" disabled>
-              Order Alfa
-            </option>
-            <option value="">Inicio</option>
-            <option value="az">A-Z</option>
-            <option value="za">Z-A</option>
-          </select>
-        </div>
-        <div>
-          <select
-            defaultValue="default"
-            onChange={(e) => haldechan(e)}
-            className="home-select"
-          >
-            <option value="default" disabled>
-              SCORE
-            </option>
-            <option value="">Inicio</option>
-            <option value="mayor">Mayor</option>
-            <option value="menor">Menor</option>
-          </select>
-        </div>
-        <div>
-          <select
-            defaultValue="default"
-            onChange={(e) => haldechan(e)}
-            className="home-select"
-          >
-            <option value="default" disabled>
-              Dietas
-            </option>
-            <option value="">Inicio</option>
-            {typess &&
-              typess.map((e) => (
-                <option value={e.name} key={e.id}>
-                  {e.name}
-                </option>
-              ))}
-            <option value="lacto ovo vegetarian">lacto ovo vegetarian</option>
-          </select>
-        </div>
-      </div>
-      <div className="dad">
-        <div className="conteiner-home">
-          {allDataRecipe
-            .filter((e) => {
-              if (serch === "") {
-                return e;
-              } else if (e.name.toLowerCase().includes(serch.toLowerCase())) {
-                return e;
-              }
-            })
-            .slice(
-              (pagina - 1) * porPagina,
-              (pagina - 1) * porPagina + porPagina
-            )
-            .map((e) => {
-              return (
-                <div className="conteiner-data">
-                  <Cards
-                    key={e.id}
-                    name={e.name}
-                    img={e.img}
-                    lvl={e.lvl}
-                    Types={e.Types}
-                    id={e.id}
-                  />
-                </div>
-              );
-            })}
-          <Pagineichon
-            pagina={pagina}
-            setPagina={setPagina}
-            limitationCards={limitationCards}
+      <div className="dad-home">
+        <div className="titel-home">
+          <input
+            type="text"
+            placeholder="Busqueda"
+            onChange={handleChangue}
+            value={serch}
           />
+          <button onClick={handleClick} className="buto">
+            <Link to={`/recipes/data`}>
+              <img src={search} alt="" className="search-icon" />
+            </Link>
+          </button>
+        </div>
+        <div>
+          <div>
+            <div className="home-selectors">
+              <select defaultValue="default" onChange={(e) => haldechan(e)}>
+                <option value="default" disabled>
+                  Order Alfa
+                </option>
+                <option value="">Inicio</option>
+                <option value="az">A-Z</option>
+                <option value="za">Z-A</option>
+              </select>
+
+              <select defaultValue="default" onChange={(e) => haldechan(e)}>
+                <option value="default" disabled>
+                  SCORE
+                </option>
+                <option value="">Inicio</option>
+                <option value="mayor">Mayor</option>
+                <option value="menor">Menor</option>
+              </select>
+
+              <select defaultValue="default" onChange={(e) => haldechan(e)}>
+                <option value="default" disabled>
+                  Dietas
+                </option>
+                <option value="">Inicio</option>
+                {typess &&
+                  typess.map((e) => (
+                    <option value={e.name} key={e.id}>
+                      {e.name}
+                    </option>
+                  ))}
+                <option value="lacto ovo vegetarian">
+                  lacto ovo vegetarian
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className="dad">
+          <div className="conteiner-home">
+            {allDataRecipe
+              .filter((e) => {
+                if (serch === "") {
+                  return e;
+                } else if (e.name.toLowerCase().includes(serch.toLowerCase())) {
+                  return e;
+                }
+              })
+              .slice(
+                (pagina - 1) * porPagina,
+                (pagina - 1) * porPagina + porPagina
+              )
+              .map((e) => {
+                return (
+                  <div className="conteiner-data">
+                    <Cards
+                      key={e.id}
+                      name={e.name}
+                      img={e.img}
+                      lvl={e.lvl}
+                      Types={e.Types}
+                      id={e.id}
+                    />
+                  </div>
+                );
+              })}
+            <Pagineichon
+              pagina={pagina}
+              setPagina={setPagina}
+              limitationCards={limitationCards}
+            />
+          </div>
         </div>
       </div>
     </>

@@ -1,21 +1,18 @@
 const CardsName = ({ name, Types, img, lvl, detalis, step }) => {
   return (
     <>
-      <div>
-        <h2>{name}</h2>
-        <p>Puntuacion: {lvl}</p>
-        <ul>
+      <div className="dad-details">
+        <div className="parrafo">
+          <h2>{name}</h2>
+          <img src={img} alt={img} />
+          <p>Nive: {lvl}</p>
           <p>Dietas</p>
           {Types.map((e) => (
             <li key={e.name}>{e.name}</li>
           ))}
-        </ul>
-
-        <div>{<h3 dangerouslySetInnerHTML={{ __html: detalis }}></h3>}</div>
-        <div>
+          <h3 dangerouslySetInnerHTML={{ __html: detalis }}></h3>
           <p dangerouslySetInnerHTML={{ __html: step }}></p>
         </div>
-        <img src={img} alt={img} />
       </div>
     </>
   );

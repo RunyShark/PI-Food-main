@@ -257,7 +257,7 @@ router.get("/:id", async (req, res, next) => {
         detalis: esta.summary,
         lvl: esta.healthScore,
         step: esta.analyzedInstructions[0]?.steps.map(
-          (e) => `<ol> <il>${e.number}</il> ${e.step} </ol>`
+          (e) => `</br>${e.number}  ${e.step} `
         ),
         img: esta.image,
         Types: esta.diets.map((d) => {

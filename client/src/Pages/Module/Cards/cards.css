@@ -1,20 +1,54 @@
-.card-conteiner-btn button {
-  font-size: 20px;
-  background-color: #e9c46a;
-  border: 5px solid rgba(199, 216, 249, 0.1);
-  border-radius: 10px;
-  transition: 0.8s;
-  font-weight: bold;
-  margin-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
 .card-conteiner-btn button:hover {
   background: #e76f51;
 }
-
+.titel-card {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+}
 .card-conteiner-btn a {
   text-transform: uppercase;
   color: #003049;
   text-decoration: none;
+  margin: 20px;
+  margin-top: 100px;
+  max-height: 100px;
+}
+
+.card-dad-map {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.card-dad-map img {
+  margin: 10px;
+  border-radius: 50px;
+}
+.card-dad-map p {
+  margin: 0px;
+}
+
+.card-dad-map hr {
+  background-color: #00ffe1;
+  border: 0.2px solid #2a9d8f;
+}
+
+.card-dad-map h3 {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.number-card {
+  margin: 5px;
+  font-family: "Roboto", sans-serif;
+  color: #000000;
+  font-size: 20px;
+}
+
+.card-dad-map button {
+  margin-top: 30px;
+  margin-bottom: 50px;
 }

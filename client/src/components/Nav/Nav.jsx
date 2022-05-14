@@ -10,7 +10,7 @@ const Nav = () => {
     <>
       <div className="nav-dad">
         <div className="nav-logo">
-          <h2 className="nav-nombre-app">Comidica rica</h2>
+          <h2 className="nav-nombre-app"> CooK-BooK 🥕</h2>
         </div>
         <nav>
           <Link to={`/home`}>

@@ -7,7 +7,6 @@ const DetaisName = () => {
 
   return (
     <>
-      <h1> gola</h1>
       {allDataName.map((e) => {
         return (
           <div>

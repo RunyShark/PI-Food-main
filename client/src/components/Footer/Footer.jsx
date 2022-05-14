@@ -12,22 +12,27 @@ const Footer = () => {
         <div className="box">
           <div className="box">
             <h2>Sobre mi</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>
+              Desarrollor web. Soy una persona responsable, respetuosa, amable,
+              ordenada, enseñable y tolerante, sé trabajar en equipo y tengo
+              habilidades lógicas al resolver problemas de programación. Busco
+              mi primera experiencia laboral estable.
+            </p>
           </div>
         </div>
         <div className="box">
           <h2>Contacto</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>2283578806</p>
+          <p>sdmoreno51@gmail.com</p>
+          <p>Xalapa-Enríquez, Veracruz, México.</p>
         </div>
         <div className="box">
-          <h2>sigueme</h2>
+          <h2>Mas informacion</h2>
           <div className="red-social">
             <a href="https://github.com/RunyShark">
               <img src={git} alt="git" />
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/sergio-dario-moreno-sosa-aa204022a/">
               <img src={link} alt="git" />
             </a>
           </div>
