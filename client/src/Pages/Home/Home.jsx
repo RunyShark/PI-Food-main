@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Pagineichon from "../Module/Pagineichon/Pagineichon";
 import Cards from "../Module/Cards/Cards";
-import search from "../../helpers/Img/seach-removebg-preview.png";
+import search from "../../helpers/Img/logodo-removebg-preview (1).png";
 import {
   getName,
   getAll,
@@ -24,8 +24,6 @@ const Home = () => {
   const dispacht = useDispatch();
 
   const { allDataRecipe, typess } = useSelector((states) => states);
-
-  const limitationCards = allDataRecipe.length / porPagina;
 
   useEffect(() => {
     if (p === "az") {
@@ -170,11 +168,7 @@ const Home = () => {
                   </div>
                 );
               })}
-            <Pagineichon
-              pagina={pagina}
-              setPagina={setPagina}
-              limitationCards={limitationCards}
-            />
+            <Pagineichon pagina={pagina} setPagina={setPagina} />
           </div>
         </div>
       </div>

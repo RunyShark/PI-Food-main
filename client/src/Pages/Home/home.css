@@ -8,6 +8,7 @@
 }
 
 .titel-home {
+  margin-top: 120px;
   text-align: center;
   font-size: 15px;
 }
@@ -20,7 +21,7 @@
 .titel-home input {
   border: 3px solid #f4a261;
   height: 50px;
-  width: 475px;
+  width: 780px;
   border-radius: 10px;
   transition: 1s;
   margin-bottom: 20px;
@@ -30,12 +31,9 @@
   background-color: #e9f2f5;
 }
 .search-icon {
-  height: 35px;
+  height: 40px;
 }
-.buto {
-  margin-top: 15px;
-  margin-left: 10px;
-}
+
 .home-selectors {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -47,6 +45,7 @@
   border-radius: 10px;
   padding: 5px;
   margin: 25px;
+  margin-right: 10px;
   margin-bottom: 100px;
 }
 .conteiner-home {

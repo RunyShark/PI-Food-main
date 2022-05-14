@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Rocher";
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
 .pagination-icon {
-  height: 50px;
+  height: 20px;
+}
+.pagination-butom p {
+  display: inline-block;
+  background-color: cadetblue;
+  margin: 15px;
+  font-size: 30px;
+  font-family: "Rocher";
+  background-color: #e9c46a;
+  border: 10px solid rgba(199, 216, 249, 0.1);
+  border-radius: 10px;
+  transition: 0.8s;
+}
+.pagination-butom p:hover {
+  transform: scale(1.6);
+  box-shadow: 0px 0px 14px 0px rgb(46, 58, 68);
+  background: rgb(255, 191, 141);
 }

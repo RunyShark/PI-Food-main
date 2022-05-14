@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CardsName from "../CardsName/CardsName";
 
@@ -23,8 +22,6 @@ const DetaisName = () => {
           </div>
         );
       })}
-
-      <Link to={`/home`}>Regresar</Link>
     </>
   );
 };
