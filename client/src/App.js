@@ -16,7 +16,6 @@ function App() {
       <div className="page-container">
         <div className="content-wart">
           <Nav />
-          <h1>Hola</h1>
           <Routes>
             <Route path="/" element={<Lending />} />
             <Route path="/home" element={<Home />} />
