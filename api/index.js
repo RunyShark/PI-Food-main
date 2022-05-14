@@ -19,15 +19,12 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
-// const model = require("../api/src/routes/helper/GetPreTypes.js");
+const model = require("../api/src/routes/helper/GetPreTypes.js");
 
 conn.sync({ force: false }).then(() => {
-  server.listen(process.env.PORT, (error) => {
-    if (error) {
-      console.log(`(ㆆ_ㆆ)`);
-    } else {
-      // model.typesDit();
-      console.log(`(👍 ͡❛ ͜ʖ ͡❛)👍`);
-    }
+  server.listen(process.env.PORT || 3001, () => {
+    model.typesDit();
+
+    console.log(`(👍 ͡❛ ͜ʖ ͡❛)👍`);
   });
 });
