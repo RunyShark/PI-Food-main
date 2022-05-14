@@ -14,7 +14,7 @@ router.get("/", async (req, res, next) => {
     if (name) {
       apiExter = (
         await axios.get(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=06713865e5b04e40a2b774024d19b58f&number=100&addRecipeInformation=true`
         )
       ).data.results
         .filter((e) => e.title.includes(name))
@@ -56,7 +56,7 @@ router.get("/", async (req, res, next) => {
         //-----z-a
         apiExter = (
           await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=06713865e5b04e40a2b774024d19b58f&number=100&addRecipeInformation=true`
           )
         ).data.results.map((e) => {
           return {
@@ -91,7 +91,7 @@ router.get("/", async (req, res, next) => {
         //a-z
         apiExter = (
           await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=06713865e5b04e40a2b774024d19b58f&number=100&addRecipeInformation=true`
           )
         ).data.results.map((e) => {
           return {
@@ -125,7 +125,7 @@ router.get("/", async (req, res, next) => {
       } else if (OR === "menor") {
         apiExter = (
           await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=06713865e5b04e40a2b774024d19b58f&number=100&addRecipeInformation=true`
           )
         ).data.results.map((e) => {
           return {
@@ -159,7 +159,7 @@ router.get("/", async (req, res, next) => {
       } else if (OR === "mayor") {
         apiExter = (
           await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=06713865e5b04e40a2b774024d19b58f&number=100&addRecipeInformation=true`
           )
         ).data.results.map((e) => {
           return {
@@ -194,7 +194,7 @@ router.get("/", async (req, res, next) => {
         //-------------------------------------------------------------------------------------------
         apiExter = (
           await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=${KEY}&number=100&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=06713865e5b04e40a2b774024d19b58f&number=100&addRecipeInformation=true`
           )
         ).data.results.map((e) => {
           return {
