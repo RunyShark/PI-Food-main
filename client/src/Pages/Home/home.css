@@ -11,15 +11,20 @@
   text-align: center;
   font-size: 15px;
 }
-
+.home-grip-sercha {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin-top: 20px;
+}
 .titel-home input {
-  border: 2px solid #264653;
-
+  border: 3px solid #f4a261;
   height: 50px;
-  width: 500px;
+  width: 475px;
   border-radius: 10px;
   transition: 1s;
   margin-bottom: 20px;
+  margin-right: 20px;
 }
 .titel-home input:hover {
   background-color: #e9f2f5;
@@ -41,7 +46,8 @@
   font-size: 15px;
   border-radius: 10px;
   padding: 5px;
-  margin: 10px;
+  margin: 25px;
+  margin-bottom: 100px;
 }
 .conteiner-home {
   display: grid;

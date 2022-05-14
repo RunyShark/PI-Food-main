@@ -89,17 +89,19 @@ const Home = () => {
     <>
       <div className="dad-home">
         <div className="titel-home">
-          <input
-            type="text"
-            placeholder="Busqueda"
-            onChange={handleChangue}
-            value={serch}
-          />
-          <button onClick={handleClick} className="buto">
-            <Link to={`/recipes/data`}>
-              <img src={search} alt="" className="search-icon" />
-            </Link>
-          </button>
+          <div className="home-grip-sercha">
+            <input
+              type="text"
+              placeholder="Busqueda"
+              onChange={handleChangue}
+              value={serch}
+            />
+            <button onClick={handleClick}>
+              <Link to={`/recipes/data`}>
+                <img src={search} alt="" className="search-icon" />
+              </Link>
+            </button>
+          </div>
         </div>
         <div>
           <div>
