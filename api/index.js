@@ -41,9 +41,9 @@ const typesDit = async function () {
   }
 };
 
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   server.listen(process.env.PORT || 5000, () => {
-    typesDit();
+    //typesDit();
     console.log(`(👍 ͡❛ ͜ʖ ͡❛)👍`);
   });
 });
