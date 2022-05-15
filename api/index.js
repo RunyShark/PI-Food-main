@@ -21,10 +21,10 @@ const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const model = require("../api/src/routes/helper/GetPreTypes.js");
 
+model.typesDit();
+
 conn.sync({ force: true }).then(() => {
   server.listen(process.env.PORT || 5000, () => {
-    model.typesDit();
-
     console.log(`(👍 ͡❛ ͜ʖ ͡❛)👍`);
   });
 });
