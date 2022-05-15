@@ -15,7 +15,7 @@ const typesDit = async function () {
     console.log(error);
   }
 };
-
+typesDit();
 module.exports = {
   typesDit,
 };
