@@ -18,27 +18,12 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
-const { conn, Type } = require("./src/db.js");
+const { conn } = require("./src/db.js");
 const model = require("../api/src/routes/helper/GetPreTypes.js");
 
-const dietLoader = async function () {
-  const dietsApi = await model.typesDit();
-  try {
-    dietsApi.forEach((e) =>
-      Type.findOrCreate({
-        where: {
-          name: e,
-        },
-      })
-    );
-  } catch (e) {
-    console.log(e);
-  }
-};
-
 conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT || 3001, () => {
-    dietLoader();
+  server.listen(process.env.PORT || 5000, () => {
+    model.typesDit();
 
     console.log(`(👍 ͡❛ ͜ʖ ͡❛)👍`);
   });
