@@ -1,37 +1,27 @@
-// const { KEY } = process.env;
-// const axios = require("axios");
-// const { Type } = require("../../db.js");
-// const typesDit = async function () {
-//   try {
-//     const dietType = await axios.get(
-//       `https://api.spoonacular.com/recipes/complexSearch?apiKey=06713865e5b04e40a2b774024d19b58f&number=100&addRecipeInformation=true`
-//     );
-//     const typ = await dietType.data.results.map((e) => e.diets).flat(1);
-//     let uno = [...new Set(typ)]; //+ velos 0 data repetida
-//     console.log("types precargadas corectamente");
-//     console.log(uno);
-//     uno.forEach((e) =>
-//       Type.findOrCreate({
-//         where: {
-//           name: e,
-//         },
-//       })
-//     );
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// module.exports = {
-//   typesDit,
-// };
-const allDiets = async function () {
-  const dietList = await axios.get(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=a683a28ed7ab49239f7360eb0cb71903&number=60&addRecipeInformation=true`
-  );
-  const repeated = await dietList.data.results.map((d) => d.diets).flat(1);
-  return [...new Set(repeated)];
+const { KEY } = process.env;
+const axios = require("axios");
+const { Type } = require("../../db.js");
+const typesDit = async function () {
+  try {
+    const dietType = await axios.get(
+      `https:api.spoonacular.com/recipes/complexSearch?apiKey=06713865e5b04e40a2b774024d19b58f&number=100&addRecipeInformation=true`
+    );
+    const typ = await dietType.data.results.map((e) => e.diets).flat(1);
+    let uno = [...new Set(typ)];
+    console.log("types precargadas corectamente");
+    console.log(uno);
+    uno.forEach((e) =>
+      Type.findOrCreate({
+        where: {
+          name: e,
+        },
+      })
+    );
+  } catch (error) {
+    console.log(error);
+  }
 };
+
 module.exports = {
-  allDiets,
+  typesDit,
 };
