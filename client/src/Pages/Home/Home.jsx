@@ -122,7 +122,7 @@ const Home = () => {
                 <option value="menor">Menor</option>
               </select>
 
-              {/* <select defaultValue="default" onChange={(e) => haldechan(e)}>
+              <select defaultValue="default" onChange={(e) => haldechan(e)}>
                 <option value="default" disabled>
                   Dietas
                 </option>
@@ -136,7 +136,7 @@ const Home = () => {
                 <option value="lacto ovo vegetarian">
                   lacto ovo vegetarian
                 </option>
-              </select> */}
+              </select>
             </div>
           </div>
         </div>

@@ -25,3 +25,13 @@
 // module.exports = {
 //   typesDit,
 // };
+const allDiets = async function () {
+  const dietList = await axios.get(
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=a683a28ed7ab49239f7360eb0cb71903&number=60&addRecipeInformation=true`
+  );
+  const repeated = await dietList.data.results.map((d) => d.diets).flat(1);
+  return [...new Set(repeated)];
+};
+module.exports = {
+  allDiets,
+};
