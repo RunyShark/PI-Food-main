@@ -14,7 +14,7 @@ router.get("/", async (req, res, next) => {
     if (name) {
       apiExter = (
         await axios.get(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=a683a28ed7ab49239f7360eb0cb71903&number=100&addRecipeInformation=true`
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=d96f10caa842427da7a35a13eb53d2d9&number=100&addRecipeInformation=true`
         )
       ).data.results
         .filter((e) => e.title.includes(name))
@@ -56,7 +56,7 @@ router.get("/", async (req, res, next) => {
         //-----z-a
         apiExter = (
           await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=a683a28ed7ab49239f7360eb0cb71903&number=100&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=d96f10caa842427da7a35a13eb53d2d9&number=100&addRecipeInformation=true`
           )
         ).data.results.map((e) => {
           return {
@@ -91,7 +91,7 @@ router.get("/", async (req, res, next) => {
         //a-z
         apiExter = (
           await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=a683a28ed7ab49239f7360eb0cb71903&number=100&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=d96f10caa842427da7a35a13eb53d2d9&number=100&addRecipeInformation=true`
           )
         ).data.results.map((e) => {
           return {
@@ -125,7 +125,7 @@ router.get("/", async (req, res, next) => {
       } else if (OR === "menor") {
         apiExter = (
           await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=a683a28ed7ab49239f7360eb0cb71903&number=100&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=d96f10caa842427da7a35a13eb53d2d9&number=100&addRecipeInformation=true`
           )
         ).data.results.map((e) => {
           return {
@@ -159,7 +159,7 @@ router.get("/", async (req, res, next) => {
       } else if (OR === "mayor") {
         apiExter = (
           await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=a683a28ed7ab49239f7360eb0cb71903&number=100&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=d96f10caa842427da7a35a13eb53d2d9&number=100&addRecipeInformation=true`
           )
         ).data.results.map((e) => {
           return {
@@ -194,7 +194,7 @@ router.get("/", async (req, res, next) => {
         //-------------------------------------------------------------------------------------------
         apiExter = (
           await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?apiKey=a683a28ed7ab49239f7360eb0cb71903&number=100&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?apiKey=d96f10caa842427da7a35a13eb53d2d9&number=100&addRecipeInformation=true`
           )
         ).data.results.map((e) => {
           return {
@@ -248,7 +248,7 @@ router.get("/:id", async (req, res, next) => {
     } else {
       esta = (
         await axios.get(
-          `https://api.spoonacular.com/recipes/${id}/information?apiKey=a683a28ed7ab49239f7360eb0cb71903`
+          `https://api.spoonacular.com/recipes/${id}/information?apiKey=d96f10caa842427da7a35a13eb53d2d9`
         )
       ).data;
 
