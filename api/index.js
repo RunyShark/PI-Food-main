@@ -18,11 +18,8 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
-const { conn } = require("./src/db.js");
-
+const { conn, Type } = require("./src/db.js");
 const axios = require("axios");
-
-const { Type } = require("../../db.js");
 
 const typesDit = async function () {
   try {
@@ -43,6 +40,7 @@ const typesDit = async function () {
     console.log(error);
   }
 };
+
 conn.sync({ force: true }).then(() => {
   server.listen(process.env.PORT || 5000, () => {
     typesDit();
