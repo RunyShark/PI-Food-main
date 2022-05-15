@@ -9,21 +9,18 @@ const typesDit = async function () {
     const typ = await dietType.data.results.map((e) => e.diets).flat(1);
     let uno = [...new Set(typ)];
 
-    // uno.forEach((e) =>
-    //   Type.findOrCreate({
-    //     where: {
-    //       name: e,
-    //     },
-    //   })
-    // );
-    await uno.map((e) => {
-      Type.create({ name: e });
-    });
+    uno.forEach((e) =>
+      Type.findOrCreate({
+        where: {
+          name: e,
+        },
+      })
+    );
   } catch (error) {
     console.log(error);
   }
 };
-typesDit();
+
 module.exports = {
   typesDit,
 };
