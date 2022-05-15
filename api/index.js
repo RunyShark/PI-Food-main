@@ -23,7 +23,7 @@ const model = require("../api/src/routes/helper/GetPreTypes.js");
 
 conn.sync({ force: true }).then(() => {
   server.listen(process.env.PORT || 5000, () => {
-    model.typesDit();
+    typesDit();
 
     console.log(`(👍 ͡❛ ͜ʖ ͡❛)👍`);
   });
