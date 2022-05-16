@@ -21,7 +21,7 @@ const server = require("./src/app.js");
 const { conn, Type } = require("./src/db.js");
 const axios = require("axios");
 
-const typesDit = async function () {
+const typesDit = async = () => {
   try {
     const dietType = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=aa8a0c61d28f46c7a8b1705636db7594&number=100&addRecipeInformation=true`
