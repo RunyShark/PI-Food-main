@@ -24,7 +24,9 @@
   margin-right: 100px;
   font-size: 50px;
 }
-
+.lending-dad a {
+  text-decoration: none;
+}
 .lending-dad img {
   display: flex;
   height: 400px;
