@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #264653;
+  background-color: #3e7388;
 }
 h1 {
   font-family: "Poppins", sans-serif;
@@ -25,4 +25,16 @@ button {
 }
 button:hover {
   background: #e76f51;
+}
+
+@keyframes animationPro {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
