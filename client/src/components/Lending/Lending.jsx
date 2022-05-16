@@ -4,11 +4,10 @@ const Lending = () => {
   return (
     <>
       <div className="lending-dad">
-        <div className="lendin-buttom">
-          <Link to={`/home`}>
-            <button>Bienvenido al app</button>
-          </Link>
-        </div>
+        <h1>CooK-BooK 🥕</h1>
+        <Link to={`/home`}>
+          <button>Bienvenido al app</button>
+        </Link>
       </div>
     </>
   );

@@ -1,5 +1,14 @@
-.lending-dad {
+@font-face {
+  font-family: "Rocher";
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
 }
 
-.lendin-buttom {
+.lending-dad {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.lending-dad h1 {
+  font-family: "Rocher";
+  font-size: 50px;
 }
