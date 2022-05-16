@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #3e7388;
+  background-color: #468299;
 }
 h1 {
   font-family: "Poppins", sans-serif;
@@ -27,7 +27,7 @@ button:hover {
   background: #e76f51;
 }
 
-@keyframes animationPro {
+@keyframes fanimado {
   0% {
     background-position: 0% 50%;
   }
