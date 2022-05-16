@@ -1,3 +1,15 @@
+.lendin-full {
+  background-image: linear-gradient(
+    200deg,
+    #2a9d8f,
+    #f4a261,
+    #2a9d8f,
+    #f4a261,
+    #2a9d8f
+  );
+  background-size: 500%;
+  animation: animationPro 40s infinite;
+}
 .lending-dad {
   display: flex;
   flex-flow: row;

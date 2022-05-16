@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
+.pie-pagina {
+  width: 100%;
+  background-image: linear-gradient(
+    135deg,
+    #e76f51,
+    #f4a261,
+    #e9c46a,
+    #2a9d8f,
+    #264653,
+    #e76f51,
+    #f4a261,
+    #e9c46a,
+    #2a9d8f
+  );
+  background-size: 500%;
+  animation: animationPro 80s infinite;
+  padding-top: 2em;
+}
 .pie-pagina .grupo-1 {
   width: 100%;
   max-width: 1200px;
@@ -41,34 +59,3 @@
   font-family: "Roboto", sans-serif;
   color: #003049;
 }
-
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
-
-
-.footer-conteiner {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border: 1px solid red;
-  background-color: #faefd2;
-}
-
-.footer-colum {
-  border: 1px solid red;
-  align-self: flex-start;
-}
-
-.footer-colum h4 {
-  font-size: 18px;
-}
-
-.footer-final {
-  text-align: center;
-
-}
-
-.list-unstyled-d {
-  border-radius: 100px;
-  border: 10px solid #264653;
-  width: 250px;
-} */
