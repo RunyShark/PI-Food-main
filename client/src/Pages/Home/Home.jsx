@@ -95,7 +95,7 @@ const Home = () => {
               value={serch}
             />
             <button onClick={handleClick}>
-              <Link to={`/recipes/data`}>
+              <Link to={`/recipes/data/details`}>
                 <img src={search} alt="" className="search-icon" />
               </Link>
             </button>

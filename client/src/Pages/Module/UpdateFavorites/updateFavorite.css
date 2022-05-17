@@ -1,9 +1,9 @@
-.form-dad {
+.updatte-dad {
   display: flex;
   justify-content: space-evenly;
   margin: -10px;
 }
-.form-conteiner {
+.updatte-conteiner {
   width: 100%;
   display: flex;
   align-items: center;
@@ -13,7 +13,7 @@
   background-size: cover;
   background-position: center;
 }
-.form-conteiner select {
+.updatte-conteiner select {
   margin-top: 30px;
   margin-bottom: 30px;
   border-radius: 10px;
@@ -22,11 +22,11 @@
   border: 1px solid #e9c46a;
   color: #264653;
 }
-.form-conteiner h1 {
+.updatte-conteiner h1 {
   font-family: "Rocher";
   font-size: 40px;
 }
-.form-texta {
+.updatte-texta {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +36,7 @@
 .dasdasd {
   resize: none;
 }
-.form-conteiner form {
+.updatte-conteiner form {
   display: grid;
   grid-template-columns: auto;
   justify-content: center;
@@ -49,7 +49,7 @@
   padding: 0px 60px;
   border-radius: 10px;
 }
-.form-conteiner input {
+.updatte-conteiner input {
   display: flex;
   flex-flow: column;
   justify-content: space-evenly;
@@ -60,18 +60,18 @@
   width: 350px;
 }
 
-.form-conteiner label {
+.updatte-conteiner label {
   font-size: 15px;
   color: #264653;
   text-align: center;
 }
 
-.form-conteiner h1 {
+.updatte-conteiner h1 {
   color: #000000;
   text-align: center;
 }
 
-.form-conteiner button {
+.updatte-conteiner button {
   width: 400px;
   height: 50px;
   border: none;
@@ -81,10 +81,11 @@
   font-weight: bold;
   font-size: 18px;
   margin: auto;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.form-texta {
+.updatte-texta {
   display: flex;
   flex-flow: column;
   justify-content: space-evenly;
@@ -95,10 +96,11 @@
   width: 350px;
 }
 
-.form-conteiner p {
+.updatte-conteiner p {
   font-weight: bold;
   color: red;
   text-align: center;
+  font-size: 13px;
 }
 .yono {
   font-size: 15px;

@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+.fav-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fav-parrafo {
+  width: 500px;
+  padding: 30px 20%;
+  margin: 30px;
+  font-size: 15px;
+  line-height: 1.5;
+  background-color: #fef6f1;
+  box-shadow: 1px 5px 25px rgb(0, 0, 0, 0.45);
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 120px;
+}
+.fav-parrafo img {
+  border-radius: 10px;
+  height: 325px;
+}
+
+.fav-parrafo h1 {
+  text-align: center;
+}
+.fav-butomborrar {
+  margin-top: 10px;
+  margin-left: 530px;
+}
+.fav-butomborrar img {
+  height: 40px;
+}
+
+.fav-butomupdate a {
+  color: #264653;
+  text-decoration: none;
+}

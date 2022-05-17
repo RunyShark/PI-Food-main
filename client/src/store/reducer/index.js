@@ -7,14 +7,18 @@ import {
   POST_DATA,
   GET_OR,
   FILTER_TYPE,
+  ADD_FAV,
+  GET_FAV,
+  UPDATE_FAV,
+  DELETE_FAV,
 } from "../accions";
 
 const initilState = {
   allDataRecipe: [],
-  recipesCopia: [],
   allDataName: [],
   idDataRecipe: [],
   typess: [],
+  addFav: [],
 };
 
 const rootReducer = (state = initilState, actions) => {
@@ -42,10 +46,6 @@ const rootReducer = (state = initilState, actions) => {
         }),
       };
 
-    // Types: e.diets.map((d) => {
-    //   return { name: d };
-    // }),
-
     case GET_NAME:
       return {
         ...state,
@@ -68,6 +68,23 @@ const rootReducer = (state = initilState, actions) => {
         ...state,
       };
 
+    case ADD_FAV:
+      return {
+        ...state,
+      };
+    case GET_FAV:
+      return {
+        ...state,
+        addFav: actions.payload,
+      };
+    case UPDATE_FAV:
+      return {
+        ...state,
+      };
+    case DELETE_FAV:
+      return {
+        ...state,
+      };
     default:
       return state;
   }

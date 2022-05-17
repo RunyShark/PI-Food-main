@@ -27,7 +27,7 @@ button:hover {
   background: #e76f51;
 }
 
-@keyframes animationPro {
+@keyframes fanimado {
   0% {
     background-position: 0% 50%;
   }

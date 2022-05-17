@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Rocher";
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+.title-fav h1 {
+  font-family: "Rocher";
+  text-align: center;
+  font-size: 40px;
+}

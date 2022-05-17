@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { getType, postRecipe } from "../../../store/accions";
 import "./formuls.css";
 
@@ -83,6 +81,11 @@ const Formulario = () => {
 
   return (
     <>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="form-dad">
         <div className="form-conteiner">
           <div>
@@ -91,7 +94,7 @@ const Formulario = () => {
                 <h1>Creata tu nueva receta aca</h1>
               </div>
               <label>
-                name
+                Nombre
                 <input
                   className="formInput"
                   id="1"
@@ -106,13 +109,12 @@ const Formulario = () => {
                 {errors.name && <p>{errors.name}</p>}
               </label>
               <label>
-                lvl
+                Nivel de receta
                 <input
                   className="formInput"
                   id="3"
                   name="lvl"
                   type="number"
-                  placeholder="elije un nivel"
                   value={values.lvl}
                   label="lvl"
                   required={true}
@@ -121,13 +123,13 @@ const Formulario = () => {
                 />
                 {errors.lvl && <p>{errors.lvl}</p>}
                 <label>
-                  img
+                  Imagen
                   <input
                     className="formInput"
                     id="4"
                     name="img"
                     type="text"
-                    placeholder="Coloca una imagen"
+                    placeholder="Coloca una imagen que describa la receta"
                     value={values.img}
                     label="img"
                     required={true}
@@ -152,12 +154,12 @@ const Formulario = () => {
                   </label>
                   {errors.step && <p>{errors.step}</p>}
                   <label>
-                    detalis
+                    Detalles
                     <textarea
                       className="form-texta"
                       name="detalis"
                       id="6"
-                      placeholder="Escribe una detalis corespondiente"
+                      placeholder="Escribe los detalles de la receta"
                       value={values.detalis}
                       cols="50"
                       rows="5"
@@ -195,13 +197,15 @@ const Formulario = () => {
               >
                 Agregar
               </button>
-              <Link to={"/home"}>
-                <button>volver</button>
-              </Link>
             </form>
           </div>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 };
