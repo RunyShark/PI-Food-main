@@ -47,6 +47,7 @@
   margin: 25px;
   margin-right: 10px;
   margin-bottom: 100px;
+  border: 2px solid #f4a261;
 }
 .conteiner-home {
   display: grid;
