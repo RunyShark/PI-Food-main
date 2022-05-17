@@ -7,8 +7,8 @@
     #f4a261,
     #2a9d8f
   );
-  background-size: 500%;
-  animation: animationPro 40s infinite;
+
+  animation: fanimado 40s infinite;
 }
 .lending-dad {
   display: flex;
@@ -24,6 +24,7 @@
   margin-right: 100px;
   font-size: 50px;
 }
+
 .lending-dad a {
   text-decoration: none;
 }

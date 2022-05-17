@@ -15,7 +15,9 @@
     #2a9d8f
   );
   background-size: 500%;
-  animation: animationPro 80s infinite;
+
+  animation: fanimado 60s infinite;
+
   padding-top: 2em;
 }
 .pie-pagina .grupo-1 {

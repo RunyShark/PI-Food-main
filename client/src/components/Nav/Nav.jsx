@@ -19,7 +19,7 @@ const Nav = () => {
           <Link to={`/create`}>
             <img src={form} alt="from" className="nav-icon" />
           </Link>
-          <Link to={`/create`}>
+          <Link to={`/favorite`}>
             <img src={fav} alt="from" className="nav-icon" />
           </Link>
         </nav>
