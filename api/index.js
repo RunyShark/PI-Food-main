@@ -24,7 +24,7 @@ const axios = require("axios");
 const typesDit = async function () {
   try {
     const dietType = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=3370983c49e947368b8a2ef7fade58f7&number=100&addRecipeInformation=true`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=ab6bae2877e8424b927bccf3ff45169b&number=100&addRecipeInformation=true`
     );
     const typ = await dietType.data.results.map((e) => e.diets).flat(1);
     let uno = [...new Set(typ)];
@@ -43,7 +43,7 @@ const typesDit = async function () {
 
 conn.sync({ force: false }).then(() => {
   server.listen(process.env.PORT || 5000, () => {
-    //typesDit();
+    typesDit();
     console.log(`(👍 ͡❛ ͜ʖ ͡❛)👍`);
   });
 });
