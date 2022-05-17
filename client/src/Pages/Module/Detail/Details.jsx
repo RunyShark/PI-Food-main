@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getID } from "../../../store/accions";
+import { getID, addFav } from "../../../store/accions";
 
 import "./detail.css";
 
@@ -14,6 +14,7 @@ const Detail = () => {
     dispacht(getID(id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <>
       <div className="dad-details">
@@ -32,6 +33,23 @@ const Detail = () => {
             {idDataRecipe.Types?.map((e, i) => (
               <p key={i}>{e.name}</p>
             ))}
+
+            <button
+              onClick={() =>
+                dispacht(
+                  addFav({
+                    name: idDataRecipe.name,
+                    detalis: idDataRecipe.detalis,
+                    lvl: idDataRecipe.lvl,
+                    img: idDataRecipe.img,
+                    step: idDataRecipe.step,
+                    Types: idDataRecipe.Types,
+                  })
+                )
+              }
+            >
+              ADD FAV
+            </button>
           </div>
         </div>
       </div>

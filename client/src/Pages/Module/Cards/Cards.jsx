@@ -19,7 +19,7 @@ const Cards = ({ id, name, Types, img, lvl }) => {
           <div className="card-conteiner-btn">
             <hr />
             <button>
-              <Link to={`/recipes/data/${id}`}>Detalles</Link>
+              <Link to={`/recipes/data/details/${id}`}>Detalles</Link>
             </button>
           </div>
         </div>
