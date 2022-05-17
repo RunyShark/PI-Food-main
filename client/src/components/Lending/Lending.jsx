@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./lending.css";
 
-import imgf from "../../helpers/Img/logodo-removebg-preview.png";
+import imgf from "../../helpers/Img/841be8b857448d1e2d59637111a8b4fa-logotipo-de-ropa-de-gorro-de-chef.png";
 
 const Lending = () => {
   return (
