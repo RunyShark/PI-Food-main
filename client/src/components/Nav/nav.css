@@ -44,28 +44,146 @@
   font-family: "Rocher";
   font-size: 50px;
 }
+@media (max-width: 768px) {
+  .nav-dad {
+    background-color: #2a9d8f;
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+  }
 
-/* .nav-dad {
-  
-  padding: 1px;
+  .nav-icon {
+    height: 30px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: 0.8s;
+    font-weight: bold;
+    list-style: none;
+  }
+
+  .nav-dad img:hover {
+    background-color: #e9c46a;
+  }
+
+  .nav-logo {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+  }
+
+  .nav-logo h2 {
+    margin-left: 15px;
+    font-family: "Rocher";
+    font-size: 30px;
+  }
+}
+@media (max-width: 540px) {
+  .nav-dad {
+    background-color: #2a9d8f;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 125px;
+  }
+
+  .nav-icon {
+    height: 20px;
+
+    border-radius: 20px;
+    font-size: 6px;
+    transition: 0.8s;
+    font-weight: bold;
+    list-style: none;
+  }
+
+  .nav-dad img:hover {
+    background-color: #e9c46a;
+  }
+
+  .nav-logo h2 {
+    font-size: 25px;
+    margin-bottom: -30px;
+  }
+  .nav-nombre-app {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 412px) {
+  .nav-dad {
+    background-color: #2a9d8f;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 125px;
+  }
+
+  .nav-icon {
+    height: 20px;
+
+    border-radius: 20px;
+    font-size: 6px;
+    transition: 0.8s;
+    font-weight: bold;
+    list-style: none;
+  }
+
+  .nav-dad img:hover {
+    background-color: #e9c46a;
+  }
+
+  .nav-logo h2 {
+    font-size: 25px;
+    margin-bottom: -30px;
+  }
+  .nav-nombre-app {
+    margin-top: 50px;
+  }
 }
 
-.nav-logo {
-  display: flex;
+@media (max-width: 280px) {
+  .nav-dad {
+    background-color: #2a9d8f;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+  }
+
+  .nav-icon {
+    height: 10px;
+    border-radius: 20px;
+    font-size: 6px;
+    transition: 0.8s;
+    font-weight: bold;
+    list-style: none;
+  }
+
+  .nav-dad img:hover {
+    background-color: #e9c46a;
+  }
+
+  .nav-logo h2 {
+    font-size: 15px;
+    margin-bottom: -30px;
+  }
+  .nav-nombre-app {
+    margin-top: 50px;
+  }
 }
-
-
-
-.nav-conteiner li {
-  margin: 15px;
-  padding: 15px;
-  height: auto;
-  font-size: 20px;
-  border-radius: 10px;
-  transition: 0.8s;
-  font-weight: bold;
-  list-style: none;
-}
-.nav-conteiner li:hover {
-  background-color: #e9c46a;
-} */

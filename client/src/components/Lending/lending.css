@@ -9,7 +9,7 @@
   );
   background-size: 500%;
 
-  animation: fanimado 80s infinite;
+  animation: fanimado 60s infinite;
 
   padding-top: 2em;
 }
@@ -34,4 +34,123 @@
 .lending-dad img {
   display: flex;
   height: 400px;
+}
+
+@media (max-width: 1920px) {
+  .lending-dad {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .lending-dad {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    height: 100%;
+  }
+  .lending-dad img {
+    display: flex;
+    margin-top: 100px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .lending-dad {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    height: 80%;
+  }
+  .lending-dad img {
+    display: flex;
+    margin-top: 220px;
+    margin-right: 100px;
+    height: 200px;
+  }
+  .lending-dad button {
+    text-align: center;
+    font-family: "Rocher";
+    margin-top: 275px;
+    margin-right: 100px;
+    margin-left: 100px;
+    font-size: 40px;
+  }
+}
+@media (max-width: 540px) {
+  .lending-dad {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
+
+  .lending-dad img {
+    height: 0px;
+  }
+  .lending-dad button {
+    text-align: center;
+    font-family: "Rocher";
+    font-size: 30px;
+    margin-top: 100px;
+    margin-right: 50px;
+    margin-left: 150px;
+  }
+
+  .lending-dad a {
+    text-decoration: none;
+    font-size: 25px;
+  }
+}
+@media (max-width: 412px) {
+  .lending-dad {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
+
+  .lending-dad img {
+    height: 0px;
+  }
+  .lending-dad button {
+    text-align: center;
+    font-family: "Rocher";
+    font-size: 30px;
+    margin-top: 100px;
+    margin-right: 50px;
+    margin-left: 150px;
+  }
+
+  .lending-dad a {
+    text-decoration: none;
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 280px) {
+  .lending-dad {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
+
+  .lending-dad img {
+    height: 0px;
+  }
+  .lending-dad button {
+    text-align: center;
+    font-family: "Rocher";
+    font-size: 30px;
+    margin-top: 100px;
+    margin-right: 50px;
+    margin-left: 150px;
+  }
+
+  .lending-dad a {
+    text-decoration: none;
+    font-size: 25px;
+  }
 }
