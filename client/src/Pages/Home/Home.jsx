@@ -80,9 +80,6 @@ const Home = () => {
     setP(e.target.value);
   };
 
-  // const handleTypeDiets = (e) => {
-  //   setTypeDiets(e.target.value); // solucionar bug de formulario
-  // };
   return (
     <>
       <div className="dad-home">

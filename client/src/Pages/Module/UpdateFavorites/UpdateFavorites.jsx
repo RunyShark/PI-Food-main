@@ -128,7 +128,7 @@ const UpdateFavorites = () => {
               type="submit"
               value="Send"
               onClick={() =>
-                window.location.reload(alert("Actualizacion enviada"))
+                window.location.reload(alert("Actualizacion enviada 👨‍🍳 ✔"))
               }
             >
               Enviar update

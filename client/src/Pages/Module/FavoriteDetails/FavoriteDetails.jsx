@@ -20,7 +20,7 @@ const FavoriteDetails = ({ name, detalis, lvl, img, id }) => {
           <p dangerouslySetInnerHTML={{ __html: detalis }}></p>
           <div>
             <button className="fav-butomupdate">
-              <Link to={`/favorite/update/${id}`}>Update Data Muñaño</Link>
+              <Link to={`/favorite/update/${id}`}>Actualizar informacion</Link>
             </button>
           </div>
         </div>

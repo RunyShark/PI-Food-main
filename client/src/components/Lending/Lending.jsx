@@ -29,7 +29,7 @@ const Lending = () => {
             </button>
           </div>
 
-          <img src={imgf} alt="hola" />
+          <img src={imgf} alt="imgf" />
         </div>
         <br />
         <br />
