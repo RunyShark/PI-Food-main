@@ -52,3 +52,219 @@
   margin-top: 30px;
   margin-bottom: 50px;
 }
+@media (max-width: 912px) {
+  .card-conteiner-btn button:hover {
+    background: #e76f51;
+  }
+  .titel-card {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+  }
+  .card-conteiner-btn a {
+    text-transform: uppercase;
+    color: #003049;
+    text-decoration: none;
+    margin: 10px;
+    margin-top: 50px;
+    max-height: 50px;
+  }
+
+  .card-dad-map {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .card-dad-map img {
+    margin: 10px;
+    border-radius: 30px;
+  }
+  .card-dad-map p {
+    margin: 0px;
+  }
+
+  .card-dad-map hr {
+    background-color: #00ffe1;
+    border: 0.2px solid #2a9d8f;
+  }
+
+  .card-dad-map h3 {
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .number-card {
+    margin: 5px;
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+    font-size: 20px;
+  }
+
+  .card-dad-map button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 540px) {
+  .card-conteiner-btn button:hover {
+    background: #e76f51;
+  }
+  .titel-card {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+  }
+  .card-conteiner-btn a {
+    text-transform: uppercase;
+    color: #003049;
+    text-decoration: none;
+    margin: 10px;
+    margin-top: 50px;
+    max-height: 50px;
+  }
+
+  .card-dad-map {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .card-dad-map img {
+    margin: 10px;
+    border-radius: 30px;
+  }
+  .card-dad-map p {
+    margin: 0px;
+  }
+
+  .card-dad-map hr {
+    background-color: #00ffe1;
+    border: 0.2px solid #2a9d8f;
+  }
+
+  .card-dad-map h3 {
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .number-card {
+    margin: 5px;
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+    font-size: 20px;
+  }
+
+  .card-dad-map button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 412px) {
+  .card-conteiner-btn button:hover {
+    background: #e76f51;
+  }
+  .titel-card {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+  }
+  .card-conteiner-btn a {
+    text-transform: uppercase;
+    color: #003049;
+    text-decoration: none;
+    margin: 10px;
+    margin-top: 50px;
+    max-height: 50px;
+  }
+
+  .card-dad-map {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .card-dad-map img {
+    margin: 10px;
+    border-radius: 30px;
+  }
+  .card-dad-map p {
+    margin: 0px;
+  }
+
+  .card-dad-map hr {
+    background-color: #00ffe1;
+    border: 0.2px solid #2a9d8f;
+  }
+
+  .card-dad-map h3 {
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .number-card {
+    margin: 5px;
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+    font-size: 20px;
+  }
+
+  .card-dad-map button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 280px) {
+  .card-conteiner-btn button:hover {
+    background: #e76f51;
+  }
+  .titel-card {
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+  }
+  .card-conteiner-btn a {
+    text-transform: uppercase;
+    color: #003049;
+    text-decoration: none;
+    margin: 10px;
+    margin-top: 20px;
+    max-height: 20px;
+  }
+
+  .card-dad-map {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .card-dad-map img {
+    margin: 7px;
+    border-radius: 15px;
+  }
+  .card-dad-map p {
+    margin: 0px;
+  }
+
+  .card-dad-map hr {
+    background-color: #00ffe1;
+    border: 0.2px solid #2a9d8f;
+  }
+
+  .card-dad-map h3 {
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .number-card {
+    margin: 5px;
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+    font-size: 20px;
+  }
+
+  .card-dad-map button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
