@@ -28,7 +28,7 @@ const Favorite = () => {
         </div>
         {typeof addFav === "string" ? (
           <>
-            <h1>No hay data</h1>
+            <h1 className="title-fav">No hay data</h1>
           </>
         ) : (
           addFav.length > 0 &&
