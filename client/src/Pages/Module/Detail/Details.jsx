@@ -35,7 +35,7 @@ const Detail = () => {
             ))}
 
             <button
-              onClick={() =>
+              onClick={() => {
                 dispacht(
                   addFav({
                     name: idDataRecipe.name,
@@ -45,8 +45,9 @@ const Detail = () => {
                     step: idDataRecipe.step,
                     Types: idDataRecipe.Types,
                   })
-                )
-              }
+                );
+                window.location.reload(alert("Se agrego correctamente ✔ 👌"));
+              }}
             >
               ADD FAV
             </button>
