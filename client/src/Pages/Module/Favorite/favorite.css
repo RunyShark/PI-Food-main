@@ -7,3 +7,15 @@
   text-align: center;
   font-size: 40px;
 }
+
+.error-fav h1 {
+  font-family: "Rocher";
+  font-size: 40px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.error-fav img {
+  margin-right: 50px;
+}
