@@ -10,7 +10,12 @@ const FavoriteDetails = ({ name, detalis, lvl, img, id }) => {
       <div className="fav-details">
         <div className="fav-parrafo">
           <div className="fav-butomborrar">
-            <button onClick={() => dispacht(deleteFav(id))}>
+            <button
+              onClick={() => {
+                dispacht(deleteFav(id));
+                window.location.reload(alert("Borrado correctamente ✔ 👌"));
+              }}
+            >
               <img src={borrar} alt={borrar} />
             </button>
           </div>
