@@ -31,7 +31,8 @@ const Favorite = () => {
             <h1>No hay data</h1>
           </>
         ) : (
-          addFav.map((e) => (
+          addFav.length > 0 &&
+          addFav?.map((e) => (
             <FavoriteDetails
               key={e.id}
               id={e.id}
