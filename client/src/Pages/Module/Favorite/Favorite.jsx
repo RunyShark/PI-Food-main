@@ -26,12 +26,13 @@ const Favorite = () => {
         <div className="title-fav">
           <h1>Favoritos</h1>
         </div>
-        {addFav.length === 0 ? (
+        {typeof addFav === "string" ? (
           <>
             <h1>No hay data</h1>
           </>
         ) : (
           addFav.length > 0 &&
+          typeof addFav !== "string" &&
           addFav?.map((e) => (
             <FavoriteDetails
               key={e.id}
