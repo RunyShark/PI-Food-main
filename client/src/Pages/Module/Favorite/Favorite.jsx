@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getFav } from "../../../store/accions";
 import FavoriteDetails from "../FavoriteDetails/FavoriteDetails";
-import imgCheft from "../../../helpers/Img/man-cook-microsoft.png";
+
 import "./favorite.css";
 const Favorite = () => {
   const { addFav } = useSelector((state) => state);
@@ -30,7 +30,6 @@ const Favorite = () => {
         {typeof addFav === "string" ? (
           <div className="error-fav">
             <h1>No hay data</h1>
-            <img src={imgCheft} alt="imgCheft" />
           </div>
         ) : (
           addFav.length > 0 &&
