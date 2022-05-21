@@ -34,20 +34,17 @@ const Favorite = () => {
         ) : (
           addFav.length > 0 &&
           typeof addFav !== "string" &&
-          addFav?.map((e) => {
-            const { id, name, detalis, step, lvl, img } = e;
-            return (
-              <FavoriteDetails
-                key={id}
-                id={id}
-                name={name}
-                detalis={detalis}
-                step={step}
-                lvl={lvl}
-                img={img}
-              />
-            );
-          })
+          addFav?.map((e) => (
+            <FavoriteDetails
+              key={e.id}
+              id={e.id}
+              name={e.name}
+              detalis={e.detalis}
+              step={e.step}
+              lvl={e.lvl}
+              img={e.img}
+            />
+          ))
         )}
         <br />
 
