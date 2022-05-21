@@ -11,7 +11,20 @@ const DetaisName = () => {
           <br />
           <br />
           <br />
-          <div class="classic-1"></div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <div class="classic-2"></div>
+          <br />
+          <br />
+          <br />
           <br />
           <br />
           <br />
