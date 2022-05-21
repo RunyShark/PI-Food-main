@@ -1,0 +1,17 @@
+[class*="classic"]:before {
+  content: "Loading...";
+}
+
+.classic-1 {
+  margin: auto;
+  font-weight: bold;
+  font-family: "Rocher";
+  font-size: 100px;
+  color: #e9c46a;
+  animation: c1 1s linear infinite alternate;
+}
+@keyframes c1 {
+  to {
+    opacity: 0;
+  }
+}
