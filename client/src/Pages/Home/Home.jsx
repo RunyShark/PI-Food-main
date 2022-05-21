@@ -139,32 +139,53 @@ const Home = () => {
         </div>
         <div className="dad">
           <div className="conteiner-home">
-            {allDataRecipe
-              .filter((e) => {
-                if (serch === "") {
-                  return e;
-                } else if (e.name.toLowerCase().includes(serch.toLowerCase())) {
-                  return e;
-                }
-              })
-              .slice(
-                (pagina - 1) * porPagina,
-                (pagina - 1) * porPagina + porPagina
-              )
-              .map((e) => {
-                return (
-                  <div className="conteiner-data">
-                    <Cards
-                      key={e.id}
-                      name={e.name}
-                      img={e.img}
-                      lvl={e.lvl}
-                      Types={e.Types}
-                      id={e.id}
-                    />
-                  </div>
-                );
-              })}
+            {allDataRecipe.length === 0 ? (
+              <>
+                <br />
+                <br />
+                <br />
+                <div class="classic-1"></div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+              </>
+            ) : (
+              allDataRecipe
+                .filter((e) => {
+                  if (serch === "") {
+                    return e;
+                  } else if (
+                    e.name.toLowerCase().includes(serch.toLowerCase())
+                  ) {
+                    return e;
+                  }
+                })
+                .slice(
+                  (pagina - 1) * porPagina,
+                  (pagina - 1) * porPagina + porPagina
+                )
+                .map((e) => {
+                  return (
+                    <div className="conteiner-data">
+                      <Cards
+                        key={e.id}
+                        name={e.name}
+                        img={e.img}
+                        lvl={e.lvl}
+                        Types={e.Types}
+                        id={e.id}
+                      />
+                    </div>
+                  );
+                })
+            )}
             <Pagineichon pagina={pagina} setPagina={setPagina} />
           </div>
         </div>
