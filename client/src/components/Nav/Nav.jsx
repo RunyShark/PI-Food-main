@@ -10,7 +10,11 @@ const Nav = () => {
     <>
       <div className="nav-dad">
         <div className="nav-logo">
-          <h2 className="nav-nombre-app"> CooK-BooK 🥕</h2>
+          <a href="https://spoonacular.com/food-api" target="_blank">
+            <h2 className="nav-nombre-app" id="alert">
+              CooK-BooK 🥕
+            </h2>
+          </a>
         </div>
         <nav>
           <Link to={`/home`}>
