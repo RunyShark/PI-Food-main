@@ -1,4 +1,21 @@
 /* background-color: #264653; */
+[class*="classic"]:before {
+  content: "Loading...";
+}
+
+.classic-1 {
+  margin: auto;
+  font-weight: bold;
+  font-family: "Rocher";
+  font-size: 100px;
+  color: #e9c46a;
+  animation: c1 1s linear infinite alternate;
+}
+@keyframes c1 {
+  to {
+    opacity: 0;
+  }
+}
 
 .dad-home {
   background-color: #3e7388;
@@ -329,6 +346,23 @@
 }
 
 @media (max-width: 540px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-1 {
+    margin: auto;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 80px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
   .dad-home {
     background-color: #3e7388;
     display: flex;
@@ -413,6 +447,23 @@
 }
 
 @media (max-width: 412px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-1 {
+    margin: auto;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 60px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
   .dad-home {
     background-color: #3e7388;
     display: flex;
@@ -458,12 +509,12 @@
   .home-selectors select {
     background-color: #e9f2f5;
     border: 1px solid #264653;
-    font-size: 10px;
+    font-size: 5px;
     border-radius: 10px;
-    padding: 5px;
-    margin: 25px;
-    margin-right: 20px;
-    margin-bottom: 60px;
+    padding: 8px;
+    margin: 15px;
+    margin-right: 15px;
+    margin-bottom: 40px;
     border: 2px solid #f4a261;
   }
   .conteiner-home {
@@ -496,6 +547,23 @@
   }
 }
 @media (max-width: 375px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-1 {
+    margin: auto;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 50px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
   .dad-home {
     background-color: #3e7388;
     display: flex;
@@ -580,6 +648,23 @@
 }
 
 @media (max-width: 360px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-1 {
+    margin: auto;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 50px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
   .dad-home {
     background-color: #3e7388;
     display: flex;
@@ -664,6 +749,23 @@
 }
 
 @media (max-width: 280px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-1 {
+    margin: auto;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 50px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
   .dad-home {
     background-color: #3e7388;
     display: flex;
@@ -684,22 +786,23 @@
   }
   .titel-home input {
     border: 3px solid #f4a261;
-    height: 35px;
-    width: 200px;
+    height: 20px;
+    width: 150px;
     border-radius: 10px;
     transition: 1s;
     margin-bottom: 20px;
-    margin-right: 20px;
+
     margin-top: 30px;
   }
   .titel-home input:hover {
     background-color: #e9f2f5;
   }
   .search-icon {
-    height: 30px;
+    height: 20px;
   }
   .dad-home button {
     margin-top: 30px;
+    margin-right: 5px;
   }
 
   .home-selectors {
@@ -709,12 +812,12 @@
   .home-selectors select {
     background-color: #e9f2f5;
     border: 1px solid #264653;
-    font-size: 10px;
+    font-size: 5px;
     border-radius: 10px;
-    padding: 5px;
-    margin: 25px;
-    margin-right: 20px;
-    margin-bottom: 60px;
+    padding: 8px;
+    margin: 15px;
+    margin-right: 15px;
+    margin-bottom: 40px;
     border: 2px solid #f4a261;
   }
   .conteiner-home {
@@ -744,22 +847,5 @@
 
   .dad-home select {
     display: flex;
-  }
-}
-[class*="classic"]:before {
-  content: "Loading...";
-}
-
-.classic-1 {
-  margin: auto;
-  font-weight: bold;
-  font-family: "Rocher";
-  font-size: 100px;
-  color: #e9c46a;
-  animation: c1 1s linear infinite alternate;
-}
-@keyframes c1 {
-  to {
-    opacity: 0;
   }
 }
