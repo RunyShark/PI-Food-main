@@ -103,7 +103,7 @@ const Home = () => {
             <div className="home-selectors">
               <select defaultValue="default" onChange={(e) => haldechan(e)}>
                 <option value="default" disabled>
-                  Order Alfa
+                  Orden alfabetico
                 </option>
                 <option value="">Inicio</option>
                 <option value="az">A-Z</option>
@@ -112,7 +112,7 @@ const Home = () => {
 
               <select defaultValue="default" onChange={(e) => haldechan(e)}>
                 <option value="default" disabled>
-                  SCORE
+                  Puntuacion
                 </option>
                 <option value="">Inicio</option>
                 <option value="mayor">Mayor</option>
