@@ -15,3 +15,157 @@
     opacity: 0;
   }
 }
+@media (max-width: 820px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-2 {
+    margin-left: 20%;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 80px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-2 {
+    margin-left: 20%;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 80px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-2 {
+    margin-left: 20%;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 80px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
+}
+@media (max-width: 414px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-2 {
+    margin-left: 20%;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 60px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
+}
+@media (max-width: 412px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-2 {
+    margin-left: 20%;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 60px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-2 {
+    margin-left: 20%;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 30px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
+}
+@media (max-width: 360px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-2 {
+    margin-left: 20%;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 30px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
+}
+@media (max-width: 280px) {
+  [class*="classic"]:before {
+    content: "Loading...";
+  }
+
+  .classic-2 {
+    margin-left: 20%;
+    font-weight: bold;
+    font-family: "Rocher";
+    font-size: 30px;
+    color: #e9c46a;
+    animation: c1 1s linear infinite alternate;
+  }
+  @keyframes c1 {
+    to {
+      opacity: 0;
+    }
+  }
+}
