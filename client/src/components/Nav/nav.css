@@ -15,6 +15,9 @@
   width: 100%;
 }
 
+.nav-dad a {
+  text-decoration: none;
+}
 .nav-icon {
   height: 50px;
   padding: 20px;
@@ -173,9 +176,6 @@
     transition: 0.8s;
     font-weight: bold;
     list-style: none;
-  }
-  .nav-dad a {
-    text-decoration: none;
   }
 
   .nav-dad img:hover {
