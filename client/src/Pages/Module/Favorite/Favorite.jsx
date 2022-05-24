@@ -40,9 +40,9 @@ const Favorite = () => {
               id={e.id}
               name={e.name}
               detalis={e.detalis}
-              step={e.step}
               lvl={e.lvl}
               img={e.img}
+              Types={e.Types}
             />
           ))
         )}

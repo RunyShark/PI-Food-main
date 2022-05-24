@@ -1,4 +1,5 @@
 const { DataTypes } = require("sequelize");
+const { dietasAleatorias } = require("./helper/dietesAleatotias");
 
 module.exports = (sequelize) => {
   sequelize.define(
@@ -19,13 +20,17 @@ module.exports = (sequelize) => {
       img: {
         type: DataTypes.STRING,
       },
-      step: {
-        type: DataTypes.ARRAY(DataTypes.TEXT),
-      },
       Types: {
         type: DataTypes.ARRAY(DataTypes.JSON),
+        defaultValue: function () {
+          return dietasAleatorias();
+        },
       },
     },
     { timestamps: false }
   );
 };
+
+// step: {
+//   type: DataTypes.ARRAY(DataTypes.TEXT),
+// },
