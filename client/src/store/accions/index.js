@@ -108,7 +108,6 @@ export const filterType = (type) => {
 //-------------------------------------------------------//
 
 export const postRecipe = (data) => {
-  console.log(data);
   return async () => {
     const resp = await axios.post(`/recipe`, data);
     return resp;
@@ -123,8 +122,6 @@ export const addFav = (data) => {
 };
 //-------------------------------------------------------//
 export const updateFav = (id, data) => {
-  console.log(id);
-  console.log(data);
   return async () => {
     const resp = await axios.put(`/update/${id}`, data);
     return resp;
