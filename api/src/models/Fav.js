@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize");
-const { dietasAleatorias } = require("./helper/dietesAleatotias");
+const { dietasAleatorias } = require("./helper/dietesAleatotias.js");
 
 module.exports = (sequelize) => {
   sequelize.define(
