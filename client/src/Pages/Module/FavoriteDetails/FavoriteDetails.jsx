@@ -3,7 +3,7 @@ import { deleteFav } from "../../../store/accions";
 import { useDispatch } from "react-redux";
 import "./favoriteDetails.css";
 import borrar from "../../../helpers/Img/delete3-removebg-preview.png";
-const FavoriteDetails = ({ name, detalis, lvl, img, id }) => {
+const FavoriteDetails = ({ name, detalis, lvl, img, id, Types }) => {
   const dispacht = useDispatch();
   return (
     <>
