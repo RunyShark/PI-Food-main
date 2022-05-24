@@ -42,7 +42,6 @@ const Favorite = () => {
               detalis={e.detalis}
               lvl={e.lvl}
               img={e.img}
-              Types={e.Types}
             />
           ))
         )}
