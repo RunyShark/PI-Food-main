@@ -23,10 +23,7 @@ const FavoriteDetails = ({ name, detalis, lvl, img, id, Types }) => {
           <h3>Nivel {lvl}</h3>
           <img src={img} alt={img} />
           <p dangerouslySetInnerHTML={{ __html: detalis }}></p>
-          <h3>Tipos de dietas</h3>
-          {Types.map((e) => (
-            <li key={e.name}>{e.name}</li>
-          ))}
+
           <div>
             <button className="fav-butomupdate">
               <Link to={`/favorite/update/${id}`}>Actualizar informacion</Link>
