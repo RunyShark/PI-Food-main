@@ -49,13 +49,6 @@ const rootReducer = (state = initilState, actions) => {
           }
         }),
       };
-    // case MENORD:
-    //   return {
-    //     ...state,
-    //     allDataRecipe: state.allDataRecipe.filter((e) => {
-    //       return e.lvl <= actions.payload;
-    //     }),
-    //   };
 
     case FILTROENVIVO:
       const axui = state.allDataRecipe;

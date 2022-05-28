@@ -29,6 +29,7 @@ const validation = (values) => {
   } else if (!regexComments.test(values.detalis.trim())) {
     errors.detalis = "¡La detalis no puede ser mayor a 300 caracters!";
   }
+
   if (!values.step.trim()) {
     errors.step = "Se requieren los pasos para realizar la receta";
   } else if (!regexComments.test(values.step.trim())) {
@@ -46,6 +47,7 @@ const Formulario = () => {
     detalis: "",
     lvl: 0,
     step: "",
+
     img: "",
   });
 
