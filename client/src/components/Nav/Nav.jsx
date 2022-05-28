@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import home from "../../helpers/Img/home-removebg-preview.png";
 import form from "../../helpers/Img/ejejedsadasd-removebg-preview (1).png";
 import fav from "../../helpers/Img/fav-removebg-preview.png";
-
+import { useDispatch } from "react-redux";
+import { getAll } from "../.././store/accions";
 import "./nav.css";
 
 const Nav = () => {
+  const dispach = useDispatch();
   return (
     <>
       <div className="nav-dad">
@@ -17,7 +19,12 @@ const Nav = () => {
           </Link>
         </div>
         <nav>
-          <Link to={`/home`}>
+          <Link
+            to={`/home`}
+            onClick={() => {
+              dispach(getAll());
+            }}
+          >
             <img src={home} alt="inicio" className="nav-icon" />
           </Link>
           <Link to={`/create`}>

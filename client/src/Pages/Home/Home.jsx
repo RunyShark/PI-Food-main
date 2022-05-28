@@ -1,22 +1,24 @@
 /* eslint-disable array-callback-return */
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Pagineichon from "../Module/Pagineichon/Pagineichon";
 import Cards from "../Module/Cards/Cards";
 import search from "../../helpers/Img/logodo-removebg-preview (1).png";
+
 import {
   getName,
   getAll,
   getOrder,
   getType,
   filterType,
+  filtroEnVivo,
 } from "../../store/accions";
 import "./home.css";
 
 const Home = () => {
   const [pagina, setPagina] = useState(1);
-  // eslint-disable-next-line no-unused-vars
+  let navigate = useNavigate();
   const [porPagina, setPorPagina] = useState(9);
   const [serch, setSerch] = useState("");
   const [p, setP] = useState("");
@@ -57,7 +59,7 @@ const Home = () => {
     } else {
       dispacht(getAll());
     }
-
+    //
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [p]);
 
@@ -71,9 +73,14 @@ const Home = () => {
     e.preventDefault();
     setSerch(e.target.value);
     setPagina(1);
+    dispacht(filtroEnVivo(e.target.value));
   };
+
   const handleClick = () => {
-    dispacht(getName(serch));
+    if (serch !== "") {
+      dispacht(getName(serch));
+      navigate("/recipes/data/details", { replace: true });
+    }
   };
   const haldechan = (e) => {
     e.preventDefault();
@@ -91,10 +98,12 @@ const Home = () => {
               onChange={handleChangue}
               value={serch}
             />
-            <button onClick={handleClick}>
-              <Link to={`/recipes/data/details`}>
-                <img src={search} alt="" className="search-icon" />
-              </Link>
+
+            <button
+              disabled={serch === "" ? true : false}
+              onClick={handleClick}
+            >
+              <img src={search} alt="" className="search-icon" />
             </button>
           </div>
         </div>
@@ -103,7 +112,7 @@ const Home = () => {
             <div className="home-selectors">
               <select defaultValue="default" onChange={(e) => haldechan(e)}>
                 <option value="default" disabled>
-                  Orden alfabetico
+                  Order Alfa
                 </option>
                 <option value="">Inicio</option>
                 <option value="az">A-Z</option>
@@ -112,7 +121,7 @@ const Home = () => {
 
               <select defaultValue="default" onChange={(e) => haldechan(e)}>
                 <option value="default" disabled>
-                  Puntuacion
+                  SCORE
                 </option>
                 <option value="">Inicio</option>
                 <option value="mayor">Mayor</option>
@@ -144,7 +153,7 @@ const Home = () => {
                 <br />
                 <br />
                 <br />
-                <div class="classic-1"></div>
+                <div className="classic-1"></div>
                 <br />
                 <br />
                 <br />
@@ -158,35 +167,32 @@ const Home = () => {
               </>
             ) : (
               allDataRecipe
-                .filter((e) => {
-                  if (serch === "") {
-                    return e;
-                  } else if (
-                    e.name.toLowerCase().includes(serch.toLowerCase())
-                  ) {
-                    return e;
-                  }
-                })
                 .slice(
                   (pagina - 1) * porPagina,
                   (pagina - 1) * porPagina + porPagina
                 )
                 .map((e) => {
                   return (
-                    <div className="conteiner-data">
+                    <div key={e.id} className="conteiner-data">
                       <Cards
-                        key={e.id}
                         name={e.name}
                         img={e.img}
                         lvl={e.lvl}
                         Types={e.Types}
                         id={e.id}
+                        tiempoDe={e.tiempoDe}
                       />
                     </div>
                   );
                 })
             )}
-            <Pagineichon pagina={pagina} setPagina={setPagina} />
+            <Pagineichon
+              porPagina={porPagina}
+              setPorPagina={setPorPagina}
+              pagina={pagina}
+              serch={serch}
+              setPagina={setPagina}
+            />
           </div>
         </div>
       </div>

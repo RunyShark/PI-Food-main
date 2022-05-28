@@ -11,11 +11,14 @@ import {
   GET_FAV,
   UPDATE_FAV,
   DELETE_FAV,
+  MENORD,
+  FILTROENVIVO,
 } from "../accions";
 
 const initilState = {
   allDataRecipe: [],
   allDataName: [],
+  copi: [],
   idDataRecipe: [],
   typess: [],
   addFav: [],
@@ -27,6 +30,7 @@ const rootReducer = (state = initilState, actions) => {
       return {
         ...state,
         allDataRecipe: actions.payload,
+        copi: actions.payload,
       };
     case GET_OR:
       return {
@@ -45,7 +49,29 @@ const rootReducer = (state = initilState, actions) => {
           }
         }),
       };
+    // case MENORD:
+    //   return {
+    //     ...state,
+    //     allDataRecipe: state.allDataRecipe.filter((e) => {
+    //       return e.lvl <= actions.payload;
+    //     }),
+    //   };
 
+    case FILTROENVIVO:
+      const axui = state.allDataRecipe;
+      const equisde = state.copi;
+
+      const resp =
+        actions.payload.length < 0
+          ? axui
+          : equisde.filter((e) => {
+              return e.name.includes(actions.payload);
+            });
+
+      return {
+        ...state,
+        allDataRecipe: resp,
+      };
     case GET_NAME:
       return {
         ...state,
@@ -85,6 +111,7 @@ const rootReducer = (state = initilState, actions) => {
       return {
         ...state,
       };
+
     default:
       return state;
   }

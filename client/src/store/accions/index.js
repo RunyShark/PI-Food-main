@@ -12,13 +12,15 @@ export const ADD_FAV = "ADD_FAV";
 export const GET_FAV = "GET_FAV";
 export const UPDATE_FAV = "UPDATE_FAV";
 export const DELETE_FAV = "DELETE_FAV";
+export const MENORD = "MENORD";
+export const FILTROENVIVO = "FILTROENVIVO";
 
 export const getAll = () => {
   return async (dispatch) => {
     try {
       const resp = await axios({
         method: "GET",
-        url: "/recipes",
+        url: "http://localhost:3001/recipes",
       });
 
       return dispatch({ type: GET_ALL, payload: resp.data });
@@ -33,7 +35,7 @@ export const getFav = () => {
     try {
       const resp = await axios({
         method: "GET",
-        url: "/favorite",
+        url: "http://localhost:3001/favorite",
       });
 
       return dispatch({ type: GET_FAV, payload: resp.data });
@@ -48,7 +50,7 @@ export const getName = (name) => {
     try {
       const resp = await axios({
         method: "GET",
-        url: `/recipes?name=${name}`,
+        url: `http://localhost:3001/recipes?name=${name}`,
       });
       return dispatch({ type: GET_NAME, payload: resp.data });
     } catch (error) {
@@ -62,7 +64,7 @@ export const getOrder = (Order) => {
     try {
       const resp = await axios({
         method: "GET",
-        url: `/recipes?OR=${Order}`,
+        url: `http://localhost:3001/recipes?OR=${Order}`,
       });
       return dispatch({ type: GET_OR, payload: resp.data });
     } catch (error) {
@@ -76,7 +78,7 @@ export const getID = (id) => {
     try {
       const resp = await axios({
         method: "GET",
-        url: `/recipes/${id}`,
+        url: `http://localhost:3001/recipes/${id}`,
       });
       return dispatch({ type: GET_ID, payload: resp.data });
     } catch (error) {
@@ -90,7 +92,7 @@ export const getType = () => {
     try {
       const resp = await axios({
         method: "GET",
-        url: `/type`,
+        url: `http://localhost:3001/type`,
       });
       return dispatch({ type: GET_TYPE, payload: resp.data });
     } catch (error) {
@@ -105,32 +107,48 @@ export const filterType = (type) => {
     payload: type,
   };
 };
+export const menorD = (menor) => {
+  return {
+    type: MENORD,
+    payload: menor,
+  };
+};
+
+export const filtroEnVivo = (e) => {
+  return {
+    type: FILTROENVIVO,
+    payload: e,
+  };
+};
 //-------------------------------------------------------//
 
 export const postRecipe = (data) => {
+  console.log(data);
   return async () => {
-    const resp = await axios.post(`/recipe`, data);
+    const resp = await axios.post(`http://localhost:3001/recipe`, data);
     return resp;
   };
 };
 
 export const addFav = (data) => {
   return async () => {
-    const resp = await axios.post(`/fav`, data);
+    const resp = await axios.post(`http://localhost:3001/fav`, data);
     return resp;
   };
 };
 //-------------------------------------------------------//
 export const updateFav = (id, data) => {
+  console.log(id);
+  console.log(data);
   return async () => {
-    const resp = await axios.put(`/update/${id}`, data);
+    const resp = await axios.put(`http://localhost:3001/update/${id}`, data);
     return resp;
   };
 };
 //-------------------------------------------------------//
 export const deleteFav = (id) => {
   return async () => {
-    const resp = await axios.delete(`/delete/${id}`);
+    const resp = await axios.delete(`http://localhost:3001/delete/${id}`);
     return resp;
   };
 };
