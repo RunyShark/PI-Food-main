@@ -11,7 +11,6 @@ import {
   GET_FAV,
   UPDATE_FAV,
   DELETE_FAV,
-  MENORD,
   FILTROENVIVO,
 } from "../accions";
 
