@@ -106,12 +106,6 @@ export const filterType = (type) => {
     payload: type,
   };
 };
-export const menorD = (menor) => {
-  return {
-    type: MENORD,
-    payload: menor,
-  };
-};
 
 export const filtroEnVivo = (e) => {
   return {
